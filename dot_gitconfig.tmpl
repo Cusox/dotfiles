@@ -16,6 +16,10 @@
 	name = Cusox
 	email = cusoxlee@gmail.com
 {{ end -}}
+{{ if eq .chezmoi.hostname "Omit" -}}
+[gpg]
+	program = C:\\Users\\cusox\\scoop\\apps\\gpg\\current\\bin\\gpg.exe
+{{ end -}}
 [column]
 	ui = auto
 [branch]
