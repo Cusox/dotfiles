@@ -322,6 +322,7 @@ return {
 								backend = {
 									use = "gitgrep-or-ripgrep",
 								},
+								issue185_workaround = true,
 							},
 						},
 					},

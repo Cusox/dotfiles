@@ -34,7 +34,7 @@ return {
 		},
 		opts = {
 			options = {
-				theme = "nord",
+				theme = "nordic",
 				component_separators = { left = "│", right = "│" },
 				section_separators = { left = "", right = "" },
 			},
