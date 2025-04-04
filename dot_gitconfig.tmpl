@@ -19,6 +19,9 @@
 {{ if eq .chezmoi.hostname "Omit" -}}
 [gpg]
 	program = C:\\Users\\cusox\\scoop\\apps\\gpg\\current\\bin\\gpg.exe
+{{ else if eq .chezmoi.hostname "Altra" -}}
+[gpg]
+	program = D:\\Applications\\Scoop\\scoop\\apps\\gpg\\current\\bin\\gpg.exe
 {{ end -}}
 [column]
 	ui = auto
