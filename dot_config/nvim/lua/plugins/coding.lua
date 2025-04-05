@@ -18,6 +18,7 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_organize_imports", "black" },
+				yaml = { "yamlfmt" },
 			},
 			formatters = {
 				black = {
