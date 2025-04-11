@@ -1,0 +1,6 @@
+patch:
+  schema_list:
+    - schema: double_pinyin
+  menu/page_size: 9
+  switcher/hotkeys:
+    - F4
