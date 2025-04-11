@@ -1,0 +1,5 @@
+patch:
+  show_notifications_time: 400
+  style/font_point: 12
+  style/label_font_point: 12
+  style/comment_font_point: 11
