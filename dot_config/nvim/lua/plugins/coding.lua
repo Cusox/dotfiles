@@ -89,7 +89,7 @@ return {
 			local dap_ui = require("dapui")
 			local dap_virtual_text = require("nvim-dap-virtual-text")
 
-			dap_virtual_text.setup()
+			dap_virtual_text.setup({})
 
 			mason_dap.setup({
 				ensure_installed = { "codelldb" },
