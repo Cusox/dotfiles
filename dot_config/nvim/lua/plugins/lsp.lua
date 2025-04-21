@@ -11,4 +11,9 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		event = "VeryLazy",
 	},
+	{
+		"mrcjkb/rustaceanvim",
+		version = "^6",
+		lazy = false,
+	},
 }
