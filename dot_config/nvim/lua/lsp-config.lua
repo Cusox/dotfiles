@@ -1,60 +1,13 @@
-local lspconfig = require("lspconfig")
-
-require("mason").setup()
-require("mason-lspconfig").setup({
-	automatic_installation = true,
-	ensure_installed = {
-		"basedpyright",
-		"clangd",
-		"docker_compose_language_service",
-		"dockerls",
-		"lua_ls",
-		"ruff",
-	},
-})
-
+-- Capabilities
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 
--- C/C++
-lspconfig.clangd.setup({
+vim.lsp.config("*", {
 	capabilities = capabilities,
 })
 
--- Docker Compose
-lspconfig.docker_compose_language_service.setup({
-	capabilities = capabilities,
-})
-
--- DockerFile
-lspconfig.dockerls.setup({
-	capabilities = capabilities,
-})
-
--- Lua
-lspconfig.lua_ls.setup({
-	capabilities = capabilities,
-	settings = {
-		Lua = {
-			runtime = {
-				version = "LuaJIT",
-			},
-			workspace = {
-				checkThirdParty = "Disable",
-				library = {
-					-- vim.api.nvim_get_runtime_file("", true),
-					vim.env.VIMRUNTIME,
-				},
-			},
-			diagnostics = {
-				globals = { "vim", "require" },
-			},
-		},
-	},
-})
-
+-- LSP
 -- Python
-lspconfig.basedpyright.setup({
-	capabilities = capabilities,
+vim.lsp.config("basedpyright", {
 	settings = {
 		basedpyright = {
 			disableOrganizeImports = true,
@@ -68,8 +21,7 @@ lspconfig.basedpyright.setup({
 		},
 	},
 })
-lspconfig.ruff.setup({
-	capabilities = capabilities,
+vim.lsp.config("ruff", {
 	on_attach = function(client, bufnr)
 		if client.name == "ruff" then
 			client.server_capabilities.hoverProvider = false
