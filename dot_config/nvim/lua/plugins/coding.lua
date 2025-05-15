@@ -6,7 +6,6 @@ return {
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
 			"nvim-neotest/nvim-nio",
-			"jay-babu/mason-nvim-dap.nvim",
 			"theHamsta/nvim-dap-virtual-text",
 		},
 		keys = {
@@ -84,22 +83,11 @@ return {
 			},
 		},
 		config = function()
-			local mason_dap = require("mason-nvim-dap")
 			local dap = require("dap")
 			local dap_ui = require("dapui")
 			local dap_virtual_text = require("nvim-dap-virtual-text")
 
 			dap_virtual_text.setup({})
-
-			mason_dap.setup({
-				ensure_installed = { "codelldb" },
-				automatic_installation = true,
-				handlers = {
-					function(config)
-						require("mason-nvim-dap").default_setup(config)
-					end,
-				},
-			})
 
 			dap.configurations.c = {
 				{
