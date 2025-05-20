@@ -47,10 +47,6 @@ return {
 				end
 			end
 
-			vim.lsp.config("*", {
-				capabilities = vim.lsp.protocol.make_client_capabilities(),
-			})
-
 			local ensure_installed = vim.tbl_keys(lsp or {})
 			vim.list_extend(ensure_installed, opts.lsp)
 			vim.list_extend(ensure_installed, opts.dap)
