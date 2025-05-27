@@ -43,7 +43,7 @@ return {
 				lualine_b = {
 					"branch",
 					"diff",
-					"diagnotic",
+					"diagnostics",
 					{
 						"buffers",
 						mode = 2,
