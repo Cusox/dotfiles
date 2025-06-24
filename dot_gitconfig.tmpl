@@ -58,3 +58,7 @@
 	features = collared-trogon
 	navigate = true
 	side-by-side = true
+{{ if eq .chezmoi.arch "arm64" -}}
+[url "https://ghfast.top/https://github.com"]
+	insteadOf = https://github.com
+{{ end }}
