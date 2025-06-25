@@ -139,6 +139,8 @@ return {
 		opts = {
 			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
+				c = { "clang-format" },
+				cpp = { "clang-format" },
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_organize_imports", "black" },
 				yaml = { "yamlfmt" },
