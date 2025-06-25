@@ -31,8 +31,9 @@ return {
 			},
 			linter = {},
 			formatter = {
-				"stylua",
 				"black",
+				"clang-format",
+				"stylua",
 				"yamlfmt",
 			},
 		},
