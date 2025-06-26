@@ -11,7 +11,7 @@ opt.termguicolors = true
 
 opt.tabstop = 4
 opt.shiftwidth = 4
-opt.expendtab = true
+opt.expandtab = true
 opt.autoindent = true
 opt.breakindent = true
 opt.softtabstop = 4
