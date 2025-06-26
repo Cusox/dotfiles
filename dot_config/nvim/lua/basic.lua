@@ -9,6 +9,14 @@ opt.relativenumber = true
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 opt.termguicolors = true
 
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.expendtab = true
+opt.autoindent = true
+opt.breakindent = true
+opt.softtabstop = 4
+opt.smartindent = true
+
 vim.diagnostic.config({
 	virtual_lines = {
 		current_line = true,
