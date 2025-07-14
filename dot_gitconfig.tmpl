@@ -16,6 +16,7 @@
 	name = Cusox
 	email = cusoxlee@gmail.com
 {{ end -}}
+
 {{ if eq .chezmoi.hostname "Omit" -}}
 [gpg]
 	program = C:\\Users\\cusox\\scoop\\apps\\gpg\\current\\bin\\gpg.exe
@@ -23,41 +24,55 @@
 [gpg]
 	program = D:\\Applications\\Scoop\\scoop\\apps\\gpg\\current\\bin\\gpg.exe
 {{ end -}}
+
 [column]
 	ui = auto
+
 [branch]
 	sort = -committerdate
+
 [tag]
 	sort = version:refname
+
 [init]
 	defaultBranch = main
+
 [diff]
 	algorithm = histogram
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
+
 [push]
 	default = simple
 	autoSetupRemote = true
 	followTags = true
+
 [fetch]
 	prune = true
 	pruneTags = true
 	all = true
+
 [help]
 	autocorrect = prompt
+
 [merge]
 	conflictstyle = zdiff3
+    
 [pull]
 	rebase = true
+
 [core]
 	pager = delta
+
 [interactive]
 	diffFilter = delta --color-only
+
 [delta]
 	features = collared-trogon
 	navigate = true
 	side-by-side = true
+
 {{ if eq .chezmoi.arch "arm64" -}}
 [url "https://ghfast.top/https://github.com"]
 	insteadOf = https://github.com
