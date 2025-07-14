@@ -1,4 +1,5 @@
 {{- if eq .chezmoi.os "linux" -}}
+
 [".local/bin/chezmoi"]
 type = "archive-file"
 url = {{ gitHubLatestReleaseAssetURL "twpayne/chezmoi" (printf "chezmoi_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
@@ -6,5 +7,12 @@ executable = true
 refreshPeriod = "168h"
 path = "chezmoi"
 
+
+[".local/bin/git-credential-oauth"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "hickford/git-credential-oauth" (printf "git-credential-oauth_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
+executable = true
+refreshPeriod = "168h"
+path = "git-credential-oauth"
 
 {{- end -}}
