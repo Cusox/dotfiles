@@ -14,6 +14,7 @@ return {
 				"git_config",
 				"go",
 				"gomod",
+				"gotmpl",
 				"lua",
 				"make",
 				"rust",
