@@ -1,4 +1,4 @@
-{{- if eq .chezmoi.os "linux" -}}
+{{- if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
 
 [".local/bin/chezmoi"]
 type = "archive-file"
@@ -19,5 +19,13 @@ path = "git-credential-oauth"
 type = "archive"
 url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
 refreshPeriod = "168h"
+
+[".local/bin/vfox"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "version-fox/vfox" (printf "vfox_*_%s_x86_64.tar.gz" .chezmoi.os) | quote }}
+executable = true
+refreshPeriod = "168h"
+stripComponents = 1
+path = "vfox"
 
 {{- end -}}
