@@ -35,4 +35,12 @@ refreshPeriod = "168h"
 stripComponents = 1
 path = "vfox"
 
+[".local/bin/rg"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "BurntSushi/ripgrep" (printf "ripgrep-*-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
+executable = true
+refreshPeriod = "168h"
+stripComponents = 1
+path = "rg"
+
 {{- end -}}
