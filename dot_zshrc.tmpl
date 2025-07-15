@@ -25,9 +25,6 @@ then
   PATH="$HOME/.cargo/bin:$PATH"
 fi
 
-# Alias
-[ -f ~/.local/bin/rg ] && alias grep='rg'
-
 # Editor
 if [[ -f ~/.local/bin/nvim ]]
 then
@@ -36,6 +33,10 @@ then
 else
   export EDITOR=vim
 fi
+
+# Alias
+[ -f ~/.local/bin/rg ] && alias grep='rg'
+[ -f ~/.local/bin/bat ] && alias grep='cat --color=always'
 
 # Hook
 eval "$(vfox activate zsh)"
