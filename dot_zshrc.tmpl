@@ -13,6 +13,8 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+DISABLE_AUTO_UPDATE="true"
+
 # Plugins
 plugins=(
     git
@@ -45,6 +47,11 @@ fi
 # Alias
 [ -f ~/.local/bin/rg ] && alias grep='rg'
 [ -f ~/.local/bin/bat ] && alias cat='bat --color=always'
+if [[ -f ~/.local/bin/eza ]]; then
+    alias ls="eza --icons=always -h"
+    alias ll="eza -l --icons=always -h"
+    alias la="eza -la --icons=always -h"
+fi
 
 # Hook
 eval "$(vfox activate zsh)"
