@@ -15,6 +15,21 @@ executable = true
 refreshPeriod = "168h"
 path = "git-credential-oauth"
 
+[".oh-my-zsh"]
+type = "git-repo"
+url = "https://github.com/ohmyzsh/ohmyzsh.git"
+refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+type = "git-repo"
+url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+refreshPeriod = "168h"
+
+[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+type = "git-repo"
+url = "https://github.com/zsh-users/zsh-autosuggestions.git"
+refreshPeriod = "168h"
+
 [".local/share"]
 type = "archive"
 url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
