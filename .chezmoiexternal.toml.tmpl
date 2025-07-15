@@ -15,4 +15,9 @@ executable = true
 refreshPeriod = "168h"
 path = "git-credential-oauth"
 
+[".local/share"]
+type = "archive"
+url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
+refreshPeriod = "168h"
+
 {{- end -}}
