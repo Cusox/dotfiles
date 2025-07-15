@@ -73,4 +73,11 @@ refreshPeriod = "168h"
 stripComponents = 1
 path = "bat"
 
+[".local/bin/atuin"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "atuinsh/atuin" (printf "atuin-x86_64-unknown-%s-gnu.tar.gz" .chezmoi.os) | quote }}
+refreshPeriod = "168h"
+stripComponents = 1
+path = "atuin"
+
 {{- end -}}
