@@ -43,4 +43,11 @@ refreshPeriod = "168h"
 stripComponents = 1
 path = "rg"
 
+[".local/bin/fzf"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "junegunn/fzf" (printf "fzf-*-%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
+executable = true
+refreshPeriod = "168h"
+path = "fzf"
+
 {{- end -}}
