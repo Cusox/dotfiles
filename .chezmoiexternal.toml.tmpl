@@ -20,6 +20,13 @@ type = "archive"
 url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
 refreshPeriod = "168h"
 
+[".local/bin/zellij"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" (printf "zellij-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
+executable = true
+refreshPeriod = "168h"
+path = "zellij"
+
 [".local/bin/vfox"]
 type = "archive-file"
 url = {{ gitHubLatestReleaseAssetURL "version-fox/vfox" (printf "vfox_*_%s_x86_64.tar.gz" .chezmoi.os) | quote }}
