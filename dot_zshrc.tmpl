@@ -51,9 +51,9 @@ fi
 [ -f ~/.local/bin/rg ] && alias grep='rg'
 [ -f ~/.local/bin/bat ] && alias cat='bat --color=always'
 if [[ -f ~/.local/bin/eza ]]; then
-    alias ls="eza --icons=always -h"
-    alias ll="eza -l --icons=always -h"
-    alias la="eza -la --icons=always -h"
+    alias ls="eza --icons -h"
+    alias ll="eza -l --icons -h"
+    alias la="eza -la --icons -h"
 fi
 
 # Hook
