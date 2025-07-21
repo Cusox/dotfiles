@@ -47,6 +47,13 @@ refreshPeriod = "168h"
 stripComponents = 1
 path = "completions/zsh_autocomplete"
 
+[".local/bin/tree-sitter"]
+type = "archive-file"
+url = {{ gitHubLatestReleaseAssetURL "tree-sitter/tree-sitter" (printf "tree-sitter-%s-x64.gz" .chezmoi.os) | quote }}
+executable = true
+refreshPeriod = "168h"
+path = "tree-sitter"
+
 [".local/share"]
 type = "archive"
 url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
