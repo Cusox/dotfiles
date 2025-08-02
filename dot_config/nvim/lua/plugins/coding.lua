@@ -149,6 +149,10 @@ return {
 				black = {
 					prepend_args = { "--line-length", "80" },
 				},
+				yamlfmt = {
+					retain_line_breaks = true,
+					retain_line_breaks_single = true,
+				},
 			},
 			default_format_opts = {
 				lsp_format = "fallback",
