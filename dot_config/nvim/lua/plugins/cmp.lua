@@ -318,10 +318,8 @@ return {
 						---@module "blink-ripgrep"
 						---@type blink-ripgrep.Options
 						opts = {
-							future_features = {
-								backend = {
-									use = "gitgrep-or-ripgrep",
-								},
+							backend = {
+								use = "gitgrep-or-ripgrep",
 							},
 						},
 					},
