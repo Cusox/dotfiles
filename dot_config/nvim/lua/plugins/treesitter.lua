@@ -15,8 +15,12 @@ return {
 				"go",
 				"gomod",
 				"gotmpl",
+				"html",
+				"latex",
 				"lua",
 				"make",
+				"markdown",
+				"markdown_inline",
 				"rust",
 			}
 			local alreadyInstalled = require("nvim-treesitter.config").get_installed()
