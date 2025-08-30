@@ -50,6 +50,7 @@ return {
 				"<C-e>",
 			},
 			earing = "sine",
+			hide_cursor = false,
 		},
 	},
 	-- Search
