@@ -7,7 +7,6 @@ executable = true
 refreshPeriod = "168h"
 path = "chezmoi"
 
-
 [".local/bin/git-credential-oauth"]
 type = "archive-file"
 url = {{ gitHubLatestReleaseAssetURL "hickford/git-credential-oauth" (printf "git-credential-oauth_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
@@ -59,13 +58,13 @@ executable = true
 refreshPeriod = "168h"
 path = "zellij"
 
-[".local/bin/vfox"]
+[".local/bin/mise"]
 type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "version-fox/vfox" (printf "vfox_*_%s_x86_64.tar.gz" .chezmoi.os) | quote }}
+url = {{ gitHubLatestReleaseAssetURL "jdx/mise" (printf "mise-*-%s-x64-musl.tar.gz" .chezmoi.os) | quote }}
 executable = true
 refreshPeriod = "168h"
 stripComponents = 1
-path = "vfox"
+path = "bin/mise"
 
 [".local/bin/rg"]
 type = "archive-file"
