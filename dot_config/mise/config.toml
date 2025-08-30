@@ -7,6 +7,7 @@ eza = { version = "latest", os = ["windows", "linux"] }
 fzf = { version = "latest", os = ["windows", "linux"] }
 go = { version = "latest", os = ["windows", "linux"] }
 "go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
+hugo = { version = "latest", os = ["windows"] }
 neovim = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
