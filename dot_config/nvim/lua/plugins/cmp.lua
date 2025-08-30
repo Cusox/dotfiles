@@ -1,6 +1,6 @@
 return {
 	{
-		"echasnovski/mini.pairs",
+		"nvim-mini/mini.pairs",
 		event = "InsertEnter",
 		config = function()
 			require("mini.pairs").setup({})
