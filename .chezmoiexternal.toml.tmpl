@@ -25,11 +25,4 @@ type = "git-repo"
 url = "https://github.com/romkatv/powerlevel10k.git"
 refreshPeriod = "168h"
 
-[".oh-my-zsh-completions/_vfox"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "version-fox/vfox" (printf "vfox_*_%s_x86_64.tar.gz" .chezmoi.os) | quote }}
-refreshPeriod = "168h"
-stripComponents = 1
-path = "completions/zsh_autocomplete"
-
 {{- end -}}
