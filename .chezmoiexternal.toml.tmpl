@@ -1,19 +1,5 @@
 {{- if and (eq .chezmoi.os "linux") (eq .chezmoi.arch "amd64") -}}
 
-[".local/bin/chezmoi"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "twpayne/chezmoi" (printf "chezmoi_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
-executable = true
-refreshPeriod = "168h"
-path = "chezmoi"
-
-[".local/bin/git-credential-oauth"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "hickford/git-credential-oauth" (printf "git-credential-oauth_*_%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
-executable = true
-refreshPeriod = "168h"
-path = "git-credential-oauth"
-
 [".oh-my-zsh"]
 type = "git-repo"
 url = "https://github.com/ohmyzsh/ohmyzsh.git"
@@ -45,76 +31,5 @@ url = {{ gitHubLatestReleaseAssetURL "version-fox/vfox" (printf "vfox_*_%s_x86_6
 refreshPeriod = "168h"
 stripComponents = 1
 path = "completions/zsh_autocomplete"
-
-[".local/share"]
-type = "archive"
-url = "https://github.com/neovim/neovim/releases/latest/download/nvim-{{ .chezmoi.os }}-x86_64.tar.gz"
-refreshPeriod = "168h"
-
-[".local/bin/zellij"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "zellij-org/zellij" (printf "zellij-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-executable = true
-refreshPeriod = "168h"
-path = "zellij"
-
-[".local/bin/mise"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "jdx/mise" (printf "mise-*-%s-x64-musl.tar.gz" .chezmoi.os) | quote }}
-executable = true
-refreshPeriod = "168h"
-stripComponents = 1
-path = "bin/mise"
-
-[".local/bin/rg"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "BurntSushi/ripgrep" (printf "ripgrep-*-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-executable = true
-refreshPeriod = "168h"
-stripComponents = 1
-path = "rg"
-
-[".local/bin/fzf"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "junegunn/fzf" (printf "fzf-*-%s_%s.tar.gz" .chezmoi.os .chezmoi.arch) | quote }}
-executable = true
-refreshPeriod = "168h"
-path = "fzf"
-
-[".local/bin/bat"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "sharkdp/bat" (printf "bat-*-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-executable = true
-refreshPeriod = "168h"
-stripComponents = 1
-path = "bat"
-
-[".local/bin/atuin"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "atuinsh/atuin" (printf "atuin-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-refreshPeriod = "168h"
-stripComponents = 1
-path = "atuin"
-
-[".local/bin/zoxide"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "ajeetdsouza/zoxide" (printf "zoxide-*-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-refreshPeriod = "168h"
-path = "zoxide"
-
-[".local/bin/eza"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "eza-community/eza" (printf "eza_x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-refreshPeriod = "168h"
-executable = true
-path = "./eza"
-
-[".local/bin/delta"]
-type = "archive-file"
-url = {{ gitHubLatestReleaseAssetURL "dandavison/delta" (printf "delta-*-x86_64-unknown-%s-musl.tar.gz" .chezmoi.os) | quote }}
-refreshPeriod = "168h"
-executable = true
-stripComponents = 1
-path = "delta"
 
 {{- end -}}
