@@ -1,20 +1,20 @@
 [tools]
-atuin = "latest"
-bat = "latest"
-chezmoi = "latest"
-delta = "latest"
-eza = "latest"
-fzf = "latest"
-go = "latest"
-"go:github.com/hickford/git-credential-oauth" = "latest"
-neovim = "latest"
-node = "latest"
-python = "latest"
-ripgrep = "latest"
-rust = "latest"
-tree-sitter = "latest"
-zellij = "latest"
-zoxide = "latest"
+atuin = { version = "latest", os = ["linux"] }
+bat = { version = "latest", os = ["windows", "linux"] }
+chezmoi = { version = "latest", os = ["windows", "linux"] }
+delta = { version = "latest", os = ["windows", "linux"] }
+eza = { version = "latest", os = ["windows", "linux"] }
+fzf = { version = "latest", os = ["windows", "linux"] }
+go = { version = "latest", os = ["windows", "linux"] }
+"go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
+neovim = { version = "latest", os = ["windows", "linux"] }
+node = { version = "latest", os = ["windows", "linux"] }
+python = { version = "latest", os = ["windows", "linux"] }
+ripgrep = { version = "latest", os = ["windows", "linux"] }
+rust = { version = "latest", os = ["windows", "linux"] }
+tree-sitter = { version = "latest", os = ["windows", "linux"] }
+zellij = { version = "latest", os = ["linux"] }
+zoxide = { version = "latest", os = ["windows", "linux"] }
 
 [settings]
 experimental = true
