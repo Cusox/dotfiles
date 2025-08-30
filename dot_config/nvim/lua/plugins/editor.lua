@@ -1,7 +1,7 @@
 return {
 	-- File Explorr
 	{
-		"echasnovski/mini.files",
+		"nvim-mini/mini.files",
 		event = "VeryLazy",
 		opts = {},
 		keys = {

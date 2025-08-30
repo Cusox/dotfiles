@@ -1,12 +1,12 @@
 return {
 	-- Icons
 	{ "nvim-tree/nvim-web-devicons" },
-	{ "echasnovski/mini.icons" },
+	{ "nvim-mini/mini.icons" },
 	-- Completion Menu
 	{ "xzbdmw/colorful-menu.nvim" },
 	-- Indent
 	{
-		"echasnovski/mini.indentscope",
+		"nvim-mini/mini.indentscope",
 		event = "BufReadPre",
 		opts = {
 			options = {
