@@ -33,28 +33,16 @@ then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-if [[ -d $HOME/.cargo/bin ]]
-then
-  PATH="$HOME/.cargo/bin:$PATH"
-fi
-
 # Editor
-if [[ -f ~/.local/bin/nvim ]]
-then
-  alias vim='nvim'
-  export EDITOR=nvim
-else
-  export EDITOR=vim
-fi
+alias vim='nvim'
+export EDITOR=nvim
 
 # Alias
-[ -f ~/.local/bin/rg ] && alias grep='rg'
-[ -f ~/.local/bin/bat ] && alias cat='bat --color=always'
-if [[ -f ~/.local/bin/eza ]]; then
-    alias ls="eza --icons -h"
-    alias ll="eza -l --icons -h"
-    alias la="eza -la --icons -h"
-fi
+alias grep='rg'
+alias cat='bat --color=always'
+alias ls="eza --icons -h"
+alias ll="eza -l --icons -h"
+alias la="eza -la --icons -h"
 
 # Hook
 eval "$(mise activate zsh)"
