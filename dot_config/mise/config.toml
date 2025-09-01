@@ -4,9 +4,11 @@ bat = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
+fastfetch = { version = "latest", os = ["windows", "linux"] }
 fzf = { version = "latest", os = ["windows", "linux"] }
 go = { version = "latest", os = ["windows", "linux"] }
 "go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
+"go:oss.terrastruct.com/d2" = { version = "latest", os = ["windows"] }
 hugo = { version = "latest", os = ["windows"] }
 neovim = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
