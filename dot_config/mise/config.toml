@@ -14,6 +14,7 @@ go = { version = "latest", os = ["windows", "linux"] }
 hugo = { version = "latest", os = ["windows"] }
 neovim = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
+"npm:@microsoft/compose-language-service" = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
