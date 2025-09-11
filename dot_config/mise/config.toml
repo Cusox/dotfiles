@@ -20,6 +20,7 @@ node = { version = "latest", os = ["windows", "linux"] }
 "npm:dockerfile-language-server-nodejs" = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
+ruff = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
 tree-sitter = { version = "latest", os = ["windows", "linux"] }
 zellij = { version = "latest", os = ["linux"] }
