@@ -8,6 +8,7 @@ dust = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
 fastfetch = { version = "latest", os = ["windows", "linux"] }
 fzf = { version = "latest", os = ["windows", "linux"] }
+"github:vadimcn/codelldb" = { version = "latest", os = ["windows", "linux"] }
 go = { version = "latest", os = ["windows", "linux"] }
 "go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
 "go:golang.org/x/tools/gopls" = { version = "latest", os = ["windows", "linux"] }
