@@ -29,6 +29,7 @@ ruff = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
 stylua = { version = "latest", os = ["windows", "linux"] }
 tree-sitter = { version = "latest", os = ["windows", "linux"] }
+yamlfmt = { version = "latest", os = ["windows", "linux"] }
 zellij = { version = "latest", os = ["linux"] }
 zoxide = { version = "latest", os = ["windows", "linux"] }
 
