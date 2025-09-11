@@ -4,12 +4,12 @@ bat = { version = "latest", os = ["windows", "linux"] }
 black = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 clang-format = { version = "latest", os = ["windows", "linux"] }
-clangd = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
 fastfetch = { version = "latest", os = ["windows", "linux"] }
 fzf = { version = "latest", os = ["windows", "linux"] }
+"github:clangd/clangd" = { version = "latest", os = ["windows", "linux"] }
 "github:vadimcn/codelldb" = { version = "latest", os = ["windows", "linux"] }
 go = { version = "latest", os = ["windows", "linux"] }
 "go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
