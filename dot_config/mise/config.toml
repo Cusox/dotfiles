@@ -3,7 +3,6 @@ atuin = { version = "latest", os = ["linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
 black = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
-clang-format = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
@@ -23,6 +22,7 @@ node = { version = "latest", os = ["windows", "linux"] }
 "npm:dockerfile-language-server-nodejs" = { version = "latest", os = ["windows", "linux"] }
 pipx = { version = "latest", os = ["windows", "linux"] }
 "pipx:basedpyright" = { version = "latest", os = ["windows", "linux"] }
+"pipx:clang-format" = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 ruff = { version = "latest", os = ["windows", "linux"] }
