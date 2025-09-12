@@ -5,6 +5,7 @@ local opt = vim.opt
 
 opt.number = true
 opt.relativenumber = true
+vim.o.statuscolumn = ""
 
 opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 opt.termguicolors = true
