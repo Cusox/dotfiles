@@ -1,7 +1,7 @@
-vim.lsp.enable("basedpyright")
 vim.lsp.enable("clangd")
 vim.lsp.enable("docker_compose_language_service")
 vim.lsp.enable("dockerls")
 vim.lsp.enable("gopls")
 vim.lsp.enable("lua_ls")
 vim.lsp.enable("ruff")
+vim.lsp.enable("zuban")
