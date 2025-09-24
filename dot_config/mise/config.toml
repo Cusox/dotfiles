@@ -23,6 +23,7 @@ node = { version = "latest", os = ["windows", "linux"] }
 pipx = { version = "latest", os = ["linux"] }
 "pipx:basedpyright" = { version = "latest", os = ["windows", "linux"] }
 "pipx:clang-format" = { version = "latest", os = ["windows", "linux"] }
+"pipx:zuban" = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 ruff = { version = "latest", os = ["windows", "linux"] }
