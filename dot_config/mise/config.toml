@@ -2,6 +2,7 @@
 atuin = { version = "latest", os = ["linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
 black = { version = "latest", os = ["windows", "linux"] }
+bob = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
@@ -16,7 +17,6 @@ go = { version = "latest", os = ["windows", "linux"] }
 "go:oss.terrastruct.com/d2" = { version = "latest", os = ["windows"] }
 hugo = { version = "latest", os = ["windows"] }
 lua-language-server = { version = "latest", os = ["windows", "linux"] }
-neovim = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
 "npm:@microsoft/compose-language-service" = { version = "latest", os = ["windows", "linux"] }
 "npm:dockerfile-language-server-nodejs" = { version = "latest", os = ["windows", "linux"] }
