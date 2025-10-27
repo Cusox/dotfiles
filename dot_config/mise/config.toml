@@ -8,7 +8,7 @@ delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
 fastfetch = { version = "latest", os = ["windows", "linux"] }
-fd = "latest"
+fd = { version = "latest", os = ["windows", "linux"] }
 fzf = { version = "latest", os = ["windows", "linux"] }
 "github:clangd/clangd" = { version = "latest", os = ["windows", "linux"] }
 "github:vadimcn/codelldb" = { version = "latest", os = ["windows", "linux"] }
