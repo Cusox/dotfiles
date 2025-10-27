@@ -34,5 +34,8 @@ yamlfmt = { version = "latest", os = ["windows", "linux"] }
 zellij = { version = "latest", os = ["linux"] }
 zoxide = { version = "latest", os = ["windows", "linux"] }
 
+[env]
+MISE_BACKENDS_BOB = "cargo:bob-nvim"
+
 [settings]
 experimental = true
