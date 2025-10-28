@@ -1,7 +1,6 @@
 [tools]
 atuin = { version = "latest", os = ["linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
-black = { version = "latest", os = ["windows", "linux"] }
 bob = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
