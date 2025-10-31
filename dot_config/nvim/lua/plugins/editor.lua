@@ -106,8 +106,7 @@ return {
 		"XXiaoA/atone.nvim",
 		cmd = "Atone",
 		keys = {
-			{ "<Leader>at", "<CMD>Atone toggle<CR>", desc = "Toggle UndoTree" },
-			{ "<Leader>af", "<CMD>Atone focus<CR>", desc = "Focus UndoTree" },
+			{ "<Leader>ao", "<CMD>Atone<CR>", desc = "Open UndoTree" },
 		},
 		opts = {},
 	},
