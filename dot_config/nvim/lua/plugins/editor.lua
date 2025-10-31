@@ -1,5 +1,5 @@
 return {
-	-- File Explorr
+	-- File Explorer
 	{
 		"nvim-mini/mini.files",
 		event = "VeryLazy",
