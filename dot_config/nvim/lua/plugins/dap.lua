@@ -1,5 +1,4 @@
 return {
-	-- Debugger
 	{
 		"mfussenegger/nvim-dap",
 		event = "VeryLazy",
@@ -120,64 +119,6 @@ return {
 			dap.listeners.before.event_exited.dapui_config = function()
 				dap_ui.close()
 			end
-		end,
-	},
-	-- Formatter
-	{
-		"stevearc/conform.nvim",
-		event = { "BufWritePre" },
-		cmd = { "ConformInfo" },
-		keys = {
-			{
-				"<Leader>f",
-				function()
-					require("conform").format({ async = true })
-				end,
-				desc = "Format buffer",
-			},
-		},
-		opts = {
-			log_level = vim.log.levels.DEBUG,
-			formatters_by_ft = {
-				c = { "clang-format" },
-				cpp = { "clang-format" },
-				lua = { "stylua" },
-				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
-				yaml = { "yamlfmt" },
-			},
-			formatters = {
-				black = {
-					prepend_args = { "--line-length", "80" },
-				},
-			},
-			default_format_opts = {
-				lsp_format = "fallback",
-			},
-			format_on_save = {
-				timeout_ms = 500,
-			},
-		},
-		init = function()
-			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-		end,
-	},
-	-- Linter
-	{
-		"mfussenegger/nvim-lint",
-		event = { "BufReadPre" },
-		keys = {
-			{
-				"<Leader>l",
-				function()
-					require("lint").try_lint()
-				end,
-				desc = "Lint buffer",
-			},
-		},
-		config = function()
-			require("lint").linters_by_ft = {
-				python = { "ruff" },
-			}
 		end,
 	},
 }
