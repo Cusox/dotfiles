@@ -18,12 +18,6 @@ opt.breakindent = true
 opt.softtabstop = 4
 opt.smartindent = true
 
-vim.diagnostic.config({
-	virtual_lines = {
-		current_line = true,
-	},
-})
-
 -- Clipboard
 local function paste()
 	return {
