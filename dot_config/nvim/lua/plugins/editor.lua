@@ -101,4 +101,14 @@ return {
 		dependencies = { "MunifTanjim/nui.nvim" },
 		opts = {},
 	},
+	-- Undo Tree
+	{
+		"XXiaoA/atone.nvim",
+		cmd = "Atone",
+		keys = {
+			{ "<Leader>at", "<CMD>Atone toggle<CR>", desc = "Toggle UndoTree" },
+			{ "<Leader>af", "<CMD>Atone focus<CR>", desc = "Focus UndoTree" },
+		},
+		opts = {},
+	},
 }
