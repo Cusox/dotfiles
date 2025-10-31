@@ -15,8 +15,6 @@ return {
 				end,
 			})
 
-			local var = 123
-
 			local fzf_chezmoi = function()
 				local chezmoi_commands = require("chezmoi.commands")
 
