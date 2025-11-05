@@ -110,4 +110,17 @@ return {
 		},
 		opts = {},
 	},
+	-- Code Separator
+	{
+		"marantz-dev/codeSeparator.nvim",
+		keys = {
+			{ "<Leader>/b", "<CMD>BoxSeparator<CR>", desc = "Box Separator" },
+			{ "<Leader>/l", "<CMD>LineSeparator<CR>", desc = "Line Separator" },
+		},
+		config = function()
+			require("codeSeparator").setup({
+				char = "=",
+			})
+		end,
+	},
 }
