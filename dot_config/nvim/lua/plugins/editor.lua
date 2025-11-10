@@ -10,33 +10,27 @@ return {
 	},
 	-- Motion
 	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		opts = {
-			modes = {
-				search = {
-					enabled = true,
-				},
-			},
-		},
-		keys = {
-			{
-				"s",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").jump()
-				end,
-				desc = "Flash",
-			},
-			{
-				"S",
-				mode = { "n", "x", "o" },
-				function()
-					require("flash").treesitter()
-				end,
-				desc = "Flash Treesitter",
-			},
-		},
+		"ggandor/leap.nvim",
+		config = function()
+			vim.keymap.set({ "n", "x", "o" }, "s", "<Plug>(leap)")
+			vim.keymap.set("n", "S", "<Plug>(leap-from-window)")
+			vim.keymap.set({ "x", "o" }, "<Space>", function()
+				require("leap.treesitter").select({
+					opts = require("leap.user").with_traversal_keys("<Space>", "<Backspace>"),
+				})
+			end)
+
+			vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
+
+			require("leap.user").set_repeat_keys("n", "N")
+			require("leap").opts.preview = false
+			require("leap").opts.equivalence_classes = {
+				" \t\r\n",
+				"([{",
+				")]}",
+				"'\"`",
+			}
+		end,
 	},
 	-- Scroll
 	{
