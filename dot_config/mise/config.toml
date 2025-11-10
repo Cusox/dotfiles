@@ -16,6 +16,7 @@ go = { version = "latest", os = ["windows", "linux"] }
 "go:golang.org/x/tools/gopls" = { version = "latest", os = ["windows", "linux"] }
 "go:oss.terrastruct.com/d2" = { version = "latest", os = ["windows"] }
 hugo = { version = "latest", os = ["windows"] }
+jj = { version = "latest", os = ["windows", "linux"] }
 lua-language-server = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
 "npm:@microsoft/compose-language-service" = { version = "latest", os = ["windows", "linux"] }
