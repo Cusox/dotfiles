@@ -2,6 +2,7 @@
 atuin = { version = "latest", os = ["linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
 bob = { version = "latest", os = ["windows", "linux"] }
+"cargo:neocmakelsp" = "latest"
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
