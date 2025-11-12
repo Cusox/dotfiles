@@ -16,6 +16,7 @@ return {
 			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
 				c = { "clang-format" },
+				cmake = { "gersemi" },
 				cpp = { "clang-format" },
 				lua = { "stylua" },
 				python = { "ruff_fix", "ruff_format", "ruff_organize_imports" },
