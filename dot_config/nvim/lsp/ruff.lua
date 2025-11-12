@@ -3,7 +3,7 @@ return {
 	filetypes = { "python" },
 	root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
 	settings = {},
-	on_attach = function(client, bufnr)
+	on_attach = function(client)
 		if client.name == "ruff" then
 			client.server_capabilities.hoverProvider = false
 		end
