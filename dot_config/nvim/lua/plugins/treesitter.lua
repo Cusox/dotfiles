@@ -48,7 +48,7 @@ return {
 			end)
 
 			local ts_enable = function(buffer, lang)
-				local ok, hl = pcall(vim.query.get, lang, "highlights")
+				local ok, hl = pcall(ts.query.get, lang, "highlights")
 				if ok and hl then
 					vim.treesitter.start(buffer, lang)
 				end
