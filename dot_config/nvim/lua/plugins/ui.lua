@@ -94,4 +94,25 @@ return {
 			}) -- Disable Neovim's default virtual text diagnostics
 		end,
 	},
+	-- Animations
+	{
+		"rachartier/tiny-glimmer.nvim",
+		event = "VeryLazy",
+		priority = 10,
+		config = function()
+			require("tiny-glimmer").setup({
+				overwrite = {
+					search = {
+						enabled = true,
+					},
+					undo = {
+						enabled = true,
+					},
+					redo = {
+						enabled = true,
+					},
+				},
+			})
+		end,
+	},
 }
