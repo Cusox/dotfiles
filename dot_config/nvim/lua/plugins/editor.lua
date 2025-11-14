@@ -2,10 +2,9 @@ return {
 	-- File Explorer
 	{
 		"nvim-mini/mini.files",
-		event = "VeryLazy",
 		opts = {},
 		keys = {
-			{ "<Leader>t", "<CMD>lua MiniFiles.open()<CR>", desc = "Open File Explorer" },
+			{ "<leader>t", "<CMD>lua MiniFiles.open()<CR>", desc = "open file explorer" },
 		},
 	},
 	-- Motion
