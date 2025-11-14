@@ -25,6 +25,39 @@ return {
 			"rcarriga/nvim-notify",
 		},
 	},
+	-- Diagnostic Message
+	{
+		"rachartier/tiny-inline-diagnostic.nvim",
+		event = "VeryLazy",
+		priority = 1000,
+		config = function()
+			require("tiny-inline-diagnostic").setup()
+			vim.diagnostic.config({
+				virtual_text = false,
+			}) -- Disable Neovim's default virtual text diagnostics
+		end,
+	},
+	-- Animations
+	{
+		"rachartier/tiny-glimmer.nvim",
+		event = "VeryLazy",
+		priority = 10,
+		config = function()
+			require("tiny-glimmer").setup({
+				overwrite = {
+					search = {
+						enabled = true,
+					},
+					undo = {
+						enabled = true,
+					},
+					redo = {
+						enabled = true,
+					},
+				},
+			})
+		end,
+	},
 	-- Statusline
 	{
 		"nvim-lualine/lualine.nvim",
@@ -81,38 +114,5 @@ return {
 				},
 			},
 		},
-	},
-	-- Diagnostic Message
-	{
-		"rachartier/tiny-inline-diagnostic.nvim",
-		event = "VeryLazy",
-		priority = 1000,
-		config = function()
-			require("tiny-inline-diagnostic").setup()
-			vim.diagnostic.config({
-				virtual_text = false,
-			}) -- Disable Neovim's default virtual text diagnostics
-		end,
-	},
-	-- Animations
-	{
-		"rachartier/tiny-glimmer.nvim",
-		event = "VeryLazy",
-		priority = 10,
-		config = function()
-			require("tiny-glimmer").setup({
-				overwrite = {
-					search = {
-						enabled = true,
-					},
-					undo = {
-						enabled = true,
-					},
-					redo = {
-						enabled = true,
-					},
-				},
-			})
-		end,
 	},
 }
