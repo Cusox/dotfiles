@@ -21,7 +21,7 @@ return {
 
 			vim.api.nvim_set_hl(0, "LeapBackdrop", { link = "Comment" })
 
-			require("leap.user").set_repeat_keys("n", "N")
+			require("leap.user").set_repeat_keys("<Enter>", "<Backspace>")
 			require("leap").opts.preview = false
 			require("leap").opts.equivalence_classes = {
 				" \t\r\n",
