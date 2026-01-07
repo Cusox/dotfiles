@@ -1,9 +1,11 @@
 [tools]
 atuin = { version = "latest", os = ["linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
+bazel = { version = "latest", os = ["windows", "linux"] }
 bob = { version = "latest", os = ["windows", "linux"] }
 "cargo:neocmakelsp" = "latest"
 chezmoi = { version = "latest", os = ["windows", "linux"] }
+cmake = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
 dust = { version = "latest", os = ["windows", "linux"] }
 eza = { version = "latest", os = ["windows", "linux"] }
@@ -19,6 +21,9 @@ go = { version = "latest", os = ["windows", "linux"] }
 hugo = { version = "latest", os = ["windows"] }
 jj = { version = "latest", os = ["windows", "linux"] }
 lua-language-server = { version = "latest", os = ["windows", "linux"] }
+make = { version = "latest", os = ["linux"] }
+meson = { version = "latest", os = ["linux"] }
+ninja = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
 "npm:@microsoft/compose-language-service" = { version = "latest", os = ["windows", "linux"] }
 "npm:dockerfile-language-server-nodejs" = { version = "latest", os = ["windows", "linux"] }
