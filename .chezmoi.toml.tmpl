@@ -1,0 +1,8 @@
+[update]
+{{ if eq .chezmoi.os "windows" }}
+    command = "powershell"
+    args = ["-Command", "git fetch; jj rebase -d main@origin"]
+{{ else }}
+    command = "sh"
+    args = ["-c", "git fetch && jj rebase -d main@origin"]
+{{ end }}
