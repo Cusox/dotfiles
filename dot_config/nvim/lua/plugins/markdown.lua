@@ -2,6 +2,7 @@ return {
 	"MeanderingProgrammer/render-markdown.nvim",
 	---@module 'render-markdown'
 	---@type render.md.UserConfig
+	ft = { "markdown", "codecompanion" },
 	opts = {
 		quote = {
 			repeat_linebreak = true,
