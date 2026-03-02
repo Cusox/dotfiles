@@ -17,7 +17,6 @@ fzf = { version = "latest", os = ["windows", "linux"] }
 go = { version = "latest", os = ["windows", "linux"] }
 "go:github.com/hickford/git-credential-oauth" = { version = "latest", os = ["linux"] }
 "go:golang.org/x/tools/gopls" = { version = "latest", os = ["windows", "linux"] }
-"go:oss.terrastruct.com/d2" = { version = "latest", os = ["windows"] }
 hugo = { version = "latest", os = ["windows"] }
 jj = { version = "latest", os = ["windows", "linux"] }
 lua-language-server = { version = "latest", os = ["windows", "linux"] }
