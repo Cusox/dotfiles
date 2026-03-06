@@ -38,7 +38,6 @@ return {
 			},
 			"fang2hou/blink-copilot",
 			"moyiz/blink-emoji.nvim",
-			"bydlw98/blink-cmp-env",
 			"disrupted/blink-cmp-conventional-commits",
 		},
 		config = function(_, opts)
@@ -131,26 +130,7 @@ return {
 					end,
 				},
 			},
-			appearance = {
-				nerd_font_variant = "mono",
-			},
 			completion = {
-				documentation = {
-					auto_show = true,
-					auto_show_delay_ms = 500,
-				},
-				ghost_text = {
-					enabled = true,
-				},
-				keyword = {
-					range = "prefix",
-				},
-				list = {
-					selection = {
-						preselect = true,
-						auto_insert = true,
-					},
-				},
 				menu = {
 					draw = {
 						columns = {
@@ -160,36 +140,6 @@ return {
 							{ "source_name" },
 						},
 						components = {
-							item_idx = {
-								text = function(ctx)
-									return ctx.idx == 10 and "0" or ctx.idx >= 10 and " " or tostring(ctx.idx)
-								end,
-								highlight = "BlinkCmpItemIdx",
-							},
-							label = {
-								text = function(ctx)
-									local hl_info = require("colorful-menu").blink_highlights(ctx)
-									if hl_info ~= nil then
-										return hl_info.label
-									end
-									return ctx.label
-								end,
-								highlight = function(ctx)
-									local highlights = {}
-									local hl_info = require("colorful-menu").blink_highlights(ctx)
-									if hl_info ~= nil then
-										highlights = hl_info.highlights
-									end
-									for _, idx in ipairs(ctx.label_matched_indices) do
-										table.insert(highlights, {
-											idx,
-											idx + 1,
-											group = "BlinkCmpLabelMatch",
-										})
-									end
-									return highlights
-								end,
-							},
 							kind_icon = {
 								text = function(ctx)
 									if vim.tbl_contains({ "Path" }, ctx.source_name) then
@@ -228,11 +178,44 @@ return {
 									return hl
 								end,
 							},
+							label = {
+								text = function(ctx)
+									local hl_info = require("colorful-menu").blink_highlights(ctx)
+									if hl_info ~= nil then
+										return hl_info.label
+									end
+									return ctx.label
+								end,
+								highlight = function(ctx)
+									local highlights = {}
+									local hl_info = require("colorful-menu").blink_highlights(ctx)
+									if hl_info ~= nil then
+										highlights = hl_info.highlights
+									end
+									for _, idx in ipairs(ctx.label_matched_indices) do
+										table.insert(highlights, {
+											idx,
+											idx + 1,
+											group = "BlinkCmpLabelMatch",
+										})
+									end
+									return highlights
+								end,
+							},
+							item_idx = {
+								text = function(ctx)
+									return ctx.idx == 10 and "0" or ctx.idx >= 10 and " " or tostring(ctx.idx)
+								end,
+								highlight = "BlinkCmpItemIdx",
+							},
 						},
 					},
 				},
-				trigger = {
-					show_on_keyword = true,
+				documentation = {
+					auto_show = true,
+				},
+				ghost_text = {
+					enabled = true,
 				},
 			},
 			sources = {
@@ -256,7 +239,6 @@ return {
 							"lazydev",
 							"copilot",
 							"emoji",
-							"env",
 						}
 					end
 				end,
@@ -303,10 +285,6 @@ return {
 							return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
 						end,
 					},
-					env = {
-						name = "Env",
-						module = "blink-cmp-env",
-					},
 					lazydev = {
 						name = "LazyDev",
 						module = "lazydev.integrations.blink",
@@ -337,9 +315,6 @@ return {
 						end,
 					},
 				},
-			},
-			fuzzy = {
-				implementation = "prefer_rust_with_warning",
 			},
 		},
 		opts_extend = {
