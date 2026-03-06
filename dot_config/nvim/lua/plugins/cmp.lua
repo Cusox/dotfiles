@@ -1,10 +1,11 @@
 return {
 	{
-		"nvim-mini/mini.pairs",
-		event = "InsertEnter",
-		config = function()
-			require("mini.pairs").setup({})
-		end,
+		"saghen/blink.pairs",
+		version = "*",
+		dependencies = "saghen/blink.download",
+		---@module "blink.pairs"
+		---@type blink.pairs.Config
+		opts = {},
 	},
 	{
 		"zbirenbaum/copilot.lua",
