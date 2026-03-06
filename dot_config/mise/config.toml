@@ -2,7 +2,7 @@
 atuin = { version = "latest", os = ["windows", "linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
 bob = { version = "latest", os = ["windows", "linux"] }
-"cargo:neocmakelsp" = "latest"
+"cargo:neocmakelsp" = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 cmake = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
