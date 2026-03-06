@@ -55,9 +55,6 @@
 
 [help]
 	autocorrect = prompt
-
-[merge]
-	conflictstyle = zdiff3
     
 [pull]
 	rebase = true
@@ -68,10 +65,18 @@
 [interactive]
 	diffFilter = delta --color-only
 
+[include]
+    path = ~/.config/delta/themes/catppuccin.gitconfig
+
 [delta]
-	features = collared-trogon
-	navigate = true
+	features = catppuccin-frappe
+    hyperlinks = true
 	side-by-side = true
+	navigate = true
+    true-color = always
+
+[merge]
+	conflictstyle = zdiff3
 
 {{ if eq .chezmoi.arch "arm64" -}}
 [url "https://ghfast.top/https://github.com"]
