@@ -23,7 +23,7 @@ records = true
 enabled = true
 
 [theme]
-name = "catppuccin-mocha-teal"
+name = "nordic"
 debug = true
 
 [ui]
