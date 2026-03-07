@@ -23,7 +23,7 @@ records = true
 enabled = true
 
 [theme]
-name = "catppuccin-frappe-teal"
+name = "catppuccin-mocha-teal"
 debug = true
 
 [ui]
