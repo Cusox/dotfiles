@@ -33,4 +33,13 @@ return {
 			vim.api.nvim_create_user_command("ChezmoiFzf", fzf_chezmoi, {})
 		end,
 	},
+	{
+		"aikhe/wrapped.nvim",
+		dependencies = { "nvzone/volt" },
+		cmd = { "WrappedNvim" },
+		keys = {
+			{ "<Leader>r", "<CMD>WrappedNvim<CR>", desc = "Open Wrapped Dashboard" },
+		},
+		opts = {},
+	},
 }
