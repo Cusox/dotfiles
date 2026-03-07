@@ -1,19 +1,45 @@
 return {
 	{
+		"https://codeberg.org/Jorenar/nvim-dap-disasm.git",
+		dependency = "igorlfs/nvim-dap-view",
+		config = true,
+	},
+	{
+		"igorlfs/nvim-dap-view",
+		lazy = false,
+		---@module 'dap-view'
+		---@type dapview.Config
+		opts = {
+			winbar = {
+				sections = {
+					"disassembly",
+					"watches",
+					"scopes",
+					"exceptions",
+					"breakpoints",
+					"threads",
+					"repl",
+				},
+			},
+		},
+	},
+	{
 		"mfussenegger/nvim-dap",
 		event = "VeryLazy",
-		dependencies = {
-			"rcarriga/nvim-dap-ui",
-			"nvim-neotest/nvim-nio",
-			"theHamsta/nvim-dap-virtual-text",
-		},
 		keys = {
 			{
-				"<leader>ddt",
+				"<leader>ddb",
 				function()
 					require("dap").toggle_breakpoint()
 				end,
 				desc = "Toggle Breakpoint",
+			},
+			{
+				"<leader>ddl",
+				function()
+					require("dap").list_breakpoints()
+				end,
+				desc = "List Breakpoints",
 			},
 			{
 				"<leader>ddc",
@@ -46,51 +72,82 @@ return {
 			{
 				"<leader>ddr",
 				function()
-					require("dap").repl.open()
-				end,
-				desc = "Open REPL",
-			},
-			{
-				"<leader>ddl",
-				function()
 					require("dap").run_last()
 				end,
 				desc = "Run Last",
 			},
 			{
+				"<leader>dds",
+				function()
+					require("dap").run_to_cursor()
+				end,
+				desc = "Run To Cursor",
+			},
+			{
 				"<leader>ddq",
 				function()
 					require("dap").terminate()
-					require("dapui").close()
-					require("nvim-dap-virtual-text").toggle()
 				end,
 				desc = "Terminate",
-			},
-			{
-				"<leader>ddb",
-				function()
-					require("dap").list_breakpoints()
-				end,
-				desc = "List Breakpoints",
-			},
-			{
-				"<leader>dde",
-				function()
-					require("dap").set_exception_breakpoints({ "all" })
-				end,
-				desc = "Set Exception Breakpoints",
 			},
 		},
 		config = function()
 			local dap = require("dap")
-			local dap_ui = require("dapui")
-			local dap_virtual_text = require("nvim-dap-virtual-text")
 
-			dap_virtual_text.setup({})
+			dap.adapters.gdb = {
+				type = "executable",
+				command = "gdb",
+				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+			}
+			dap.adapters["rust-gdb"] = {
+				type = "executable",
+				command = "rust-gdb",
+				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
+			}
+			dap.adapters["codelldb"] = {
+				type = "executable",
+				command = "codelldb",
+			}
 
 			dap.configurations.c = {
 				{
-					name = "Launch File",
+					name = "Launch",
+					type = "gdb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					args = {},
+					cwd = "${workspaceFolder}",
+					stopAtBeginningOfMainSubprogram = false,
+				},
+				{
+					name = "Select and attach to process",
+					type = "gdb",
+					request = "attach",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					pid = function()
+						local name = vim.fn.input("Executable name (filter): ")
+						return require("dap.utils").pick_process({ filter = name })
+					end,
+					cwd = "${workspaceFolder}",
+				},
+				{
+					name = "Attach to gdbserver :1234",
+					type = "gdb",
+					request = "attach",
+					target = "localhost:1234",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+				},
+			}
+			dap.configurations.cpp = {
+				{
+					name = "Launch file",
 					type = "codelldb",
 					request = "launch",
 					program = function()
@@ -100,25 +157,57 @@ return {
 					stopOnEntry = false,
 				},
 			}
-			dap.configurations.cpp = dap.configurations.c
-			dap.configurations.rust = dap.configurations.c
+			dap.configurations.rust = {
+				{
+					name = "Launch",
+					type = "rust-gdb",
+					request = "launch",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					args = {}, -- provide arguments if needed
+					cwd = "${workspaceFolder}",
+					stopAtBeginningOfMainSubprogram = false,
+				},
+				{
+					name = "Select and attach to process",
+					type = "rust-gdb",
+					request = "attach",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					pid = function()
+						local name = vim.fn.input("Executable name (filter): ")
+						return require("dap.utils").pick_process({ filter = name })
+					end,
+					cwd = "${workspaceFolder}",
+				},
+				{
+					name = "Attach to gdbserver :1234",
+					type = "rust-gdb",
+					request = "attach",
+					target = "localhost:1234",
+					program = function()
+						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
+					end,
+					cwd = "${workspaceFolder}",
+				},
+			}
 
-			dap_ui.setup()
+			for _, group in pairs({
+				"DapBreakpoint",
+				"DapBreakpointCondition",
+				"DapBreakpointRejected",
+				"DapLogPoint",
+			}) do
+				vim.fn.sign_define(group, { text = "●", texthl = group })
+			end
+			vim.fn.sign_define(
+				"DapStopped",
+				{ text = "", texthl = "DapStopped", linehl = "debugPC", numhl = "debugPC" }
+			)
 
-			vim.fn.sign_define("DapBreakpoint", { text = "🛑", texthl = "", linehl = "", numhl = "" })
-
-			dap.listeners.before.attach.dapui_config = function()
-				dap_ui.open()
-			end
-			dap.listeners.before.launch.dapui_config = function()
-				dap_ui.open()
-			end
-			dap.listeners.before.event_terminated.dapui_config = function()
-				dap_ui.close()
-			end
-			dap.listeners.before.event_exited.dapui_config = function()
-				dap_ui.close()
-			end
+			dap.defaults.fallback.switchbuf = "usevisible,usetab,newtab"
 		end,
 	},
 }
