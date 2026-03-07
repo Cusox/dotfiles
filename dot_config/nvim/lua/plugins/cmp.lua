@@ -37,7 +37,6 @@ return {
 				},
 			},
 			"fang2hou/blink-copilot",
-			"moyiz/blink-emoji.nvim",
 			"disrupted/blink-cmp-conventional-commits",
 		},
 		config = function(_, opts)
@@ -238,7 +237,6 @@ return {
 							"ripgrep",
 							"lazydev",
 							"copilot",
-							"emoji",
 						}
 					end
 				end,
@@ -273,17 +271,6 @@ return {
 						module = "blink-copilot",
 						score_offset = 100,
 						async = true,
-					},
-					emoji = {
-						name = "Emoji",
-						module = "blink-emoji",
-						score_offset = 15,
-						opts = {
-							insert = true,
-						},
-						should_show_items = function()
-							return vim.tbl_contains({ "gitcommit", "markdown" }, vim.o.filetype)
-						end,
 					},
 					lazydev = {
 						name = "LazyDev",
