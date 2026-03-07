@@ -12,15 +12,25 @@ return {
 		opts = {
 			winbar = {
 				sections = {
-					"disassembly",
 					"watches",
 					"scopes",
 					"exceptions",
 					"breakpoints",
 					"threads",
 					"repl",
+					"disassembly",
 				},
 			},
+			windows = {
+				size = 0.5,
+				position = "right",
+				terminal = {
+					size = 0.25,
+					position = "below",
+				},
+			},
+			auto_toggle = true,
+			follow_tab = true,
 		},
 	},
 	{
@@ -33,13 +43,6 @@ return {
 					require("dap").toggle_breakpoint()
 				end,
 				desc = "Toggle Breakpoint",
-			},
-			{
-				"<leader>ddl",
-				function()
-					require("dap").list_breakpoints()
-				end,
-				desc = "List Breakpoints",
 			},
 			{
 				"<leader>ddc",
@@ -56,14 +59,14 @@ return {
 				desc = "Step Into",
 			},
 			{
-				"<leader>ddo",
+				"<leader>dds",
 				function()
 					require("dap").step_over()
 				end,
 				desc = "Step Over",
 			},
 			{
-				"<leader>ddu",
+				"<leader>ddo",
 				function()
 					require("dap").step_out()
 				end,
@@ -77,13 +80,6 @@ return {
 				desc = "Run Last",
 			},
 			{
-				"<leader>dds",
-				function()
-					require("dap").run_to_cursor()
-				end,
-				desc = "Run To Cursor",
-			},
-			{
 				"<leader>ddq",
 				function()
 					require("dap").terminate()
@@ -94,58 +90,12 @@ return {
 		config = function()
 			local dap = require("dap")
 
-			dap.adapters.gdb = {
-				type = "executable",
-				command = "gdb",
-				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-			}
-			dap.adapters["rust-gdb"] = {
-				type = "executable",
-				command = "rust-gdb",
-				args = { "--interpreter=dap", "--eval-command", "set print pretty on" },
-			}
 			dap.adapters["codelldb"] = {
 				type = "executable",
 				command = "codelldb",
 			}
 
 			dap.configurations.c = {
-				{
-					name = "Launch",
-					type = "gdb",
-					request = "launch",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					args = {},
-					cwd = "${workspaceFolder}",
-					stopAtBeginningOfMainSubprogram = false,
-				},
-				{
-					name = "Select and attach to process",
-					type = "gdb",
-					request = "attach",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					pid = function()
-						local name = vim.fn.input("Executable name (filter): ")
-						return require("dap.utils").pick_process({ filter = name })
-					end,
-					cwd = "${workspaceFolder}",
-				},
-				{
-					name = "Attach to gdbserver :1234",
-					type = "gdb",
-					request = "attach",
-					target = "localhost:1234",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					cwd = "${workspaceFolder}",
-				},
-			}
-			dap.configurations.cpp = {
 				{
 					name = "Launch file",
 					type = "codelldb",
@@ -157,42 +107,8 @@ return {
 					stopOnEntry = false,
 				},
 			}
-			dap.configurations.rust = {
-				{
-					name = "Launch",
-					type = "rust-gdb",
-					request = "launch",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					args = {}, -- provide arguments if needed
-					cwd = "${workspaceFolder}",
-					stopAtBeginningOfMainSubprogram = false,
-				},
-				{
-					name = "Select and attach to process",
-					type = "rust-gdb",
-					request = "attach",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					pid = function()
-						local name = vim.fn.input("Executable name (filter): ")
-						return require("dap.utils").pick_process({ filter = name })
-					end,
-					cwd = "${workspaceFolder}",
-				},
-				{
-					name = "Attach to gdbserver :1234",
-					type = "rust-gdb",
-					request = "attach",
-					target = "localhost:1234",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
-					end,
-					cwd = "${workspaceFolder}",
-				},
-			}
+			dap.configurations.cpp = dap.configurations.c
+			dap.configurations.rust = dap.configurations.c
 
 			for _, group in pairs({
 				"DapBreakpoint",
@@ -204,7 +120,7 @@ return {
 			end
 			vim.fn.sign_define(
 				"DapStopped",
-				{ text = "", texthl = "DapStopped", linehl = "debugPC", numhl = "debugPC" }
+				{ text = "▶", texthl = "DapStopped", linehl = "debugPC", numhl = "debugPC" }
 			)
 
 			dap.defaults.fallback.switchbuf = "usevisible,usetab,newtab"
