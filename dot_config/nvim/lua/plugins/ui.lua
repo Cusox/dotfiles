@@ -19,10 +19,14 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {},
 		dependencies = {
 			"MunifTanjim/nui.nvim",
 			"rcarriga/nvim-notify",
+		},
+		opts = {
+			presets = {
+				long_message_to_split = true,
+			},
 		},
 	},
 	-- Diagnostic Message
