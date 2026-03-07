@@ -62,9 +62,6 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		event = "VeryLazy",
-		dependencies = {
-			"AndreM222/copilot-lualine",
-		},
 		opts = {
 			options = {
 				theme = "nordic",
@@ -106,7 +103,43 @@ return {
 					"selectioncount",
 					"encoding",
 					"filetype",
-					"copilot",
+					{
+						function()
+							local icon = ""
+							local clients = vim.lsp.get_clients({ name = "copilot_ls", bufnr = 0 })
+							if #clients == 0 then
+								return ""
+							end
+
+							local is_fetching = false
+							for _, req in pairs(clients[1].requests or {}) do
+								if req.type == "pending" then
+									is_fetching = true
+									break
+								end
+							end
+
+							if is_fetching then
+								return icon .. "..."
+							end
+
+							return icon
+						end,
+						color = function()
+							local clients = vim.lsp.get_clients({ name = "copilot_ls", bufnr = 0 })
+							if #clients == 0 then
+								return { fg = "#4C566A" }
+							end
+
+							for _, req in pairs(clients[1].requests or {}) do
+								if req.type == "pending" then
+									return { fg = "#EBCB8B" }
+								end
+							end
+
+							return { fg = "#A3BE8C" }
+						end,
+					},
 				},
 				lualine_z = {
 					"progress",

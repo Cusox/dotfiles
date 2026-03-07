@@ -22,6 +22,7 @@ return {
 		config = function()
 			local lsps = {
 				"clangd",
+				"copilot",
 				"docker_compose_language_service",
 				"dockerls",
 				"gopls",
