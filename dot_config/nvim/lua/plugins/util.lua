@@ -33,4 +33,25 @@ return {
 			vim.api.nvim_create_user_command("ChezmoiFzf", fzf_chezmoi, {})
 		end,
 	},
+	{
+		"necrom4/convy.nvim",
+		cmd = { "Convy", "ConvySeparator" },
+		keys = {
+			{
+				"<leader>cc",
+				":Convy<CR>",
+				desc = "Convert (interactive selection)",
+				mode = { "n", "v" },
+				silent = true,
+			},
+			{
+				"<leader>cs",
+				":ConvySeparator<CR>",
+				desc = "Set convertion separator (visual selection)",
+				mode = { "v" },
+				silent = true,
+			},
+		},
+		opts = {},
+	},
 }
