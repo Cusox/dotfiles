@@ -26,6 +26,7 @@ return {
 				"docker_compose_language_service",
 				"dockerls",
 				"gopls",
+				"jsonls",
 				"lua_ls",
 				"neocmake",
 				"ty",
