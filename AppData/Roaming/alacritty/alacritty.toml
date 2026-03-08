@@ -1,6 +1,6 @@
 [general]
 import = ["~/AppData/Roaming/alacritty/themes/nordic.toml"]
-working_directory = "~/Desktop"
+working_directory = "C:\\Users\\cusox\\Desktop"
 
 [window]
 dynamic_padding = true
@@ -36,4 +36,5 @@ bindings = [
 [keyboard]
 bindings = [
     { key = "V", mods = "Control", mode = "~Vi", action = "Paste" },
+    { key = "N", mods = "Control", mode = "~Vi", action = "CreateNewWindow" }
 ]
