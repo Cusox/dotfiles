@@ -26,3 +26,14 @@ vi_mode_style = { shape = "Block", blinking = "Never" }
 
 [terminal]
 shell = "pwsh"
+
+[mouse]
+hide_when_typing = true
+bindings = [
+    { mouse = "Right", action = "Copy" },
+]
+
+[keyboard]
+bindings = [
+    { key = "V", mods = "Control", mode = "~Vi", action = "Paste" },
+]
