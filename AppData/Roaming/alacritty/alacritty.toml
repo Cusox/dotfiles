@@ -1,4 +1,5 @@
 [general]
+import = ["~/AppData/Roaming/alacritty/themes/nordic.toml"]
 working_directory = "~/Desktop"
 
 [window]
@@ -11,55 +12,10 @@ history = 100000
 
 [font]
 normal = { family = "JetBrainsMono Nerd Font", style = "Regular" }
-size = 12
+size = 14
 
 [colors]
-footer_bar = { foreground = "#242933", background = "#D8DEE9" }
 draw_bold_text_with_bright_colors = true
-
-[colors.primary]
-foreground = "#BBC3D4"
-background = "#242933"
-dim_foreground = "#60728A"
-bright_foreground = "#D8DEE9"
-
-[colors.search]
-matches = { foreground = "#242933", background = "#88C0D0" }
-focused_match = { foreground = "#242933", background = "#EBCB8B" }
-
-[colors.hints]
-start = { foreground = "#242933", background = "#EBCB8B" }
-end = { foreground = "#242933", background = "#BF616A" }
-
-[colors.normal]
-black = "#3B4252"
-red = "#BF616A"
-green = "#A3BE8C"
-yellow = "#EBCB8B"
-blue = "#81A1C1"
-magenta = "#B48EAD"
-cyan = "#8FBCBB"
-white = "#E5E9F0"
-
-[colors.bright]
-black = "#4C566A"
-red = "#C5727A"
-green = "#B1C89D"
-yellow = "#EFD49F"
-blue = "#88C0D0"
-magenta = "#BE9DB8"
-cyan = "#9FC6C5"
-white = "#ECEFF4"
-
-[colors.dim]
-black = "#2E3440"
-red = "#B74E58"
-green = "#97B67C"
-yellow = "#E7C173"
-blue = "#5E81AC"
-magenta = "#A97EA1"
-cyan = "#80B3B2"
-white = "#BBC3D4"
 
 [selection]
 save_to_clipboard = true

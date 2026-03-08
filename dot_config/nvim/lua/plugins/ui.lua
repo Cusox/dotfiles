@@ -109,10 +109,10 @@ return {
 					"filetype",
 					{
 						function()
-							local icon = ""
+							local icon = " "
 							local clients = vim.lsp.get_clients({ name = "copilot_ls", bufnr = 0 })
 							if #clients == 0 then
-								return ""
+								return " "
 							end
 
 							local is_fetching = false
