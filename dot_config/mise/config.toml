@@ -22,7 +22,7 @@ opencode = {version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
-tree-sitter = { version = "latest", os = ["windows", "linux"] }
+tree-sitter = { version = "0.25", os = ["windows", "linux"] }
 uv = { version = "latest", os = ["windows", "linux"] }
 zellij = { version = "latest", os = ["linux"] }
 zoxide = { version = "latest", os = ["windows", "linux"] }
