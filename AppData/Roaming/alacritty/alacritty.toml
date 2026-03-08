@@ -1,5 +1,7 @@
+[general]
+working_directory = "~/Desktop"
+
 [window]
-padding = { x = 3, y = 3 }
 dynamic_padding = true
 startup_mode = "Maximized"
 dynamic_title = false
@@ -66,3 +68,5 @@ save_to_clipboard = true
 style = { shape = "Beam", blinking = "Always" }
 vi_mode_style = { shape = "Block", blinking = "Never" }
 
+[terminal]
+shell = "pwsh"
