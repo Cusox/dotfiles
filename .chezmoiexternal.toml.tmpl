@@ -5,19 +5,22 @@ type = "git-repo"
 url = "https://github.com/ohmyzsh/ohmyzsh.git"
 refreshPeriod = "168h"
 
-[".oh-my-zsh/custom/plugins/zsh-syntax-highlighting"]
+["zsh-syntax-highlighting"]
 type = "git-repo"
 url = "https://github.com/zsh-users/zsh-syntax-highlighting.git"
 refreshPeriod = "168h"
+targetPath = ".oh-my-zsh/custom/plugins"
 
-[".oh-my-zsh/custom/plugins/zsh-autosuggestions"]
+["zsh-autosuggestions"]
 type = "git-repo"
 url = "https://github.com/zsh-users/zsh-autosuggestions.git"
 refreshPeriod = "168h"
+targetPath = ".oh-my-zsh/custom/plugins"
 
-[".oh-my-zsh/custom/plugins/zsh-autocomplete"]
+["zsh-autocomplete"]
 type = "git-repo"
 url = "https://github.com/marlonrichert/zsh-autocomplete.git"
 refreshPeriod = "168h"
+targetPath = ".oh-my-zsh/custom/plugins"
 
 {{- end -}}
