@@ -9,3 +9,6 @@
 
 # starship
 . ([ScriptBlock]::Create((& starship init powershell | Out-String)))
+
+# Zoxide
+. ([ScriptBlock]::Create((& zoxide init powershell | Out-String)))
