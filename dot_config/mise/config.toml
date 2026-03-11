@@ -2,6 +2,9 @@
 atuin = { version = "latest", os = ["windows", "linux"] }
 bat = { version = "latest", os = ["windows", "linux"] }
 bob = { version = "latest", os = ["windows", "linux"] }
+"cargo:pay-respects" = { version = "latest", os = ["windows", "linux"] }
+"cargo:pay-respects-module-request-ai" = { version = "latest", os = ["windows", "linux"] }
+"cargo:pay-respects-module-runtime-rules" = { version = "latest", os = ["windows", "linux"] }
 chezmoi = { version = "latest", os = ["windows", "linux"] }
 cmake = { version = "latest", os = ["windows", "linux"] }
 delta = { version = "latest", os = ["windows", "linux"] }
