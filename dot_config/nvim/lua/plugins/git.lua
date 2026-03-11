@@ -10,14 +10,27 @@ return {
 	},
 	{
 		"NeogitOrg/neogit",
-		cmd = "Neogit",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"sindrets/diffview.nvim",
 		},
+		cmd = "Neogit",
 		keys = {
 			{ "<Leader>g", "<CMD>Neogit<CR>", desc = "Open Neogit" },
 		},
 		opts = {},
+	},
+	{
+		"NicholasZolton/neojj",
+		lazy = true,
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"esmuellert/codediff.nvim",
+			"ibhagwan/fzf-lua", -- optional
+		},
+		cmd = "Neojj",
+		keys = {
+			{ "<leader>gg", "<cmd>Neojj<cr>", desc = "Open Neojj" },
+		},
 	},
 }
