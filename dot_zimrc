@@ -1,8 +1,12 @@
 zmodule input
 
-zmodule zdharma-continuum/fast-syntax-highlighting
+zmodule zsh-users/zsh-completions --fpath src
+zmodule completion
+
+zmodule Aloxaf/fzf-tab
 
 zmodule zsh-users/zsh-autosuggestions
 
-zmodule zsh-users/zsh-completions --fpath src
-zmodule completion
+zmodule zdharma-continuum/fast-syntax-highlighting
+
+
