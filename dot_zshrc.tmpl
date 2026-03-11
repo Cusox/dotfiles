@@ -1,3 +1,5 @@
+fpath=(~/.config/zsh/completion $fpath)
+
 source ~/.config/zsh/init_zim.zsh
 
 # Encoding
@@ -26,8 +28,3 @@ eval "$(atuin init zsh)"
 eval "$(pay-respects zsh --alias)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh --cmd cd)"
-
-# Completion
-if command -v jj &> /dev/null; then
-  source <(COMPLETE=zsh jj)
-fi
