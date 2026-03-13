@@ -8,7 +8,7 @@
 . ([ScriptBlock]::Create((& atuin init powershell | Out-String)))
 
 # pay-respects
-. ([ScriptBlock]::Create((& pay-respects pwsh --alias | Out-String)))i])
+. ([ScriptBlock]::Create((& pay-respects pwsh --alias | Out-String)))
 
 # starship
 . ([ScriptBlock]::Create((& starship init powershell | Out-String)))
