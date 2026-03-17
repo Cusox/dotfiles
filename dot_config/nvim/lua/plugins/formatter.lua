@@ -15,6 +15,7 @@ return {
 		opts = {
 			log_level = vim.log.levels.DEBUG,
 			formatters_by_ft = {
+				sh = { "beautysh" },
 				c = { "clang-format" },
 				cmake = { "gersemi" },
 				cpp = { "clang-format" },

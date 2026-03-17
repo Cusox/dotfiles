@@ -21,6 +21,7 @@ return {
 		},
 		config = function()
 			local lsps = {
+				"bashls",
 				"clangd",
 				"copilot",
 				"docker_compose_language_service",
@@ -32,11 +33,16 @@ return {
 				"ty",
 			}
 
-			local dap = {
+			local daps = {
 				"codelldb",
 			}
 
+			local linters = {
+				"shellcheck",
+			}
+
 			local formatters = {
+				"beautysh",
 				"clang-format",
 				"gersemi",
 				"ruff",
@@ -46,8 +52,9 @@ return {
 
 			local tools = {}
 			vim.list_extend(tools, lsps)
+			vim.list_extend(tools, daps)
+			vim.list_extend(tools, linters)
 			vim.list_extend(tools, formatters)
-			vim.list_extend(tools, dap)
 			require("mason-tool-installer").setup({
 				ensure_installed = tools,
 				auto_update = true,
