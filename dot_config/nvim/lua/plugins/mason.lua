@@ -42,7 +42,7 @@ return {
 			}
 
 			local formatters = {
-				"beautysh",
+				"shfmt",
 				"clang-format",
 				"gersemi",
 				"ruff",
