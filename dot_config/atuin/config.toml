@@ -22,6 +22,10 @@ records = true
 [dotfiles]
 enabled = true
 
+[daemon]
+enabled = true
+autostart = true
+
 [theme]
 name = "nordic"
 debug = true
@@ -29,3 +33,5 @@ debug = true
 [ui]
 columns = [ { type = "host", width = 10 }, { type = "user", width = 5 }, "time", "command", "duration" ]
 
+[ai]
+enabled = true
