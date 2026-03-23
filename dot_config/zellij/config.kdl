@@ -109,6 +109,7 @@ keybinds clear-defaults=true {
         bind "Alt l" { MoveFocusOrTab "right"; }
         bind "Alt n" { NewPane; }
         bind "Alt q" { CloseFocus; }
+        bind "Alt t" { NewTab; }
         bind "Alt w" { ToggleTab; }
     }
     shared_except "locked" "renametab" "renamepane" {
