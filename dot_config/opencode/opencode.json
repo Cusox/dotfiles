@@ -1,0 +1,47 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "provider": {
+        "faker": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "Faker",
+            "options": {
+                "baseURL": "https://api.fakerclaw.online/v1"
+            },
+            "models": {
+                "gpt-5.4": {
+                    "name": "gpt-5.4",
+                },
+                "gpt-5.4-mini": {
+                    "name": "gpt-5.4-mini",
+                },
+                "gpt-5.3-codex": {
+                    "name": "gpt-5.3-codex",
+                },
+            }
+        },
+        "wsocket": {
+            "npm": "@ai-sdk/openai-compatible",
+            "name": "WSocket",
+            "options": {
+                "baseURL": "https://ai.wsocket.xyz/v1"
+            },
+            "models": {
+                "gpt-5.4": {
+                    "name": "gpt-5.4",
+                }
+            }
+        }
+    },
+    "autoupdate": "notify",
+    "permission": {
+        "*": "ask",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "lsp": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "external_directory": "allow",
+    },
+}
