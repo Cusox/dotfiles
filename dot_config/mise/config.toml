@@ -31,7 +31,7 @@ starship = { version = "latest", os = ["windows", "linux"] }
 tree-sitter = { version = "0.25", os = ["windows", "linux"] }
 usage = { version = "latest", os = ["windows", "linux"] }
 uv = { version = "latest", os = ["windows", "linux"] }
-zellij = { version = "latest", os = ["windows", "linux"] }
+zellij = { version = "latest", os = ["linux"] }
 zoxide = { version = "latest", os = ["windows", "linux"] }
 
 [env]
