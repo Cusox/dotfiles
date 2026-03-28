@@ -1,0 +1,12 @@
+{
+    "lastChangelogVersion": "0.63.1",
+    "defaultProvider": "faker",
+    "defaultModel": "gpt-5.4",
+    "defaultThinkingLevel": "xhigh",
+    "showHardwareCursor": "true"
+{{ if eq .chezmoi.os "windows" -}}
+{{ if eq .chezmoi.hostname "Altra" -}}
+    "shellPath": "D:\\Applications\\Scoop\\scoop\\apps\\git\\current\\git-bash.exe",
+{{ end -}}
+{{ end -}}
+}
