@@ -22,7 +22,7 @@ make = { version = "latest", os = ["linux"] }
 meson = { version = "latest", os = ["linux"] }
 ninja = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
-opencode = {version = "latest", os = ["windows", "linux"] }
+pi = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
@@ -35,6 +35,7 @@ zoxide = { version = "latest", os = ["windows", "linux"] }
 
 [env]
 MISE_BACKENDS_BOB = "cargo:bob-nvim"
+MISE_BACKENDS_PI = "npm:@mariozechner/pi-coding-agent"
 
 [settings]
 experimental = true
