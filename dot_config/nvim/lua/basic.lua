@@ -1,40 +1,34 @@
 vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
 
-local opt = vim.opt
+vim.opt.breakindent = true
 
-opt.number = true
-opt.relativenumber = true
-vim.o.statuscolumn = ""
+vim.opt.number = true
+vim.opt.relativenumber = true
 
-opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
-opt.termguicolors = true
+vim.opt.termguicolors = true
 
-opt.tabstop = 4
-opt.shiftwidth = 4
-opt.expandtab = true
-opt.autoindent = true
-opt.breakindent = true
-opt.softtabstop = 4
-opt.smartindent = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.softtabstop = 4
+vim.opt.expandtab = true
+vim.opt.smartindent = true
 
--- Clipboard
-local function paste()
-	return {
-		vim.fn.split(vim.fn.getreg(""), "\n"),
-		vim.fn.getregtype(""),
-	}
-end
+vim.opt.clipboard = "unnamedplus"
+if os.getenv("SSH_TTY") ~= nil then
+	local osc52 = require("vim.ui.clipboard.osc52")
 
-if os.getenv("SSH_TTY") == nil then
-	opt.clipboard = "unnamedplus"
-else
-	opt.clipboard = "unnamedplus"
+	local function paste()
+		return {
+			vim.fn.split(vim.fn.getreg(""), "\n"),
+			vim.fn.getregtype(""),
+		}
+	end
+
 	vim.g.clipboard = {
 		name = "OSC 52",
 		copy = {
-			["+"] = require("vim.ui.clipboard.osc52").copy("+"),
-			["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+			["+"] = osc52.copy("+"),
+			["*"] = osc52.copy("*"),
 		},
 		paste = {
 			["+"] = paste,
