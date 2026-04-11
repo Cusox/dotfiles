@@ -1,4 +1,4 @@
-local opts_expand = function(mode, lhs, rhs, opts)
+local map = function(mode, lhs, rhs, opts)
 	opts = opts or {}
 	opts.silent = opts.silent ~= false
 	if opts.remap and not vim.g.vscode then
@@ -6,8 +6,6 @@ local opts_expand = function(mode, lhs, rhs, opts)
 	end
 	vim.keymap.set(mode, lhs, rhs, opts)
 end
-
-local map = opts_expand
 
 --- Normal Mode ---
 -- Better Up/Down --
