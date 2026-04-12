@@ -38,7 +38,7 @@ map("n", "<Leader>wq", "<CMD>wq<CR>", { desc = "Save and Close Window" })
 -- Jump --
 map("n", "<Leader>[", "<C-o>", { desc = "Jump Prev" })
 map("n", "<Leader>]", "<C-i>", { desc = "Jump Next" })
-map("n", "gd", "<CMD>lua vim.lsp.buf.definition()<CR>", { desc = "Jump to Definition" })
+map("n", "gd", vim.lsp.buf.definition, { desc = "Jump to Definition" })
 map("n", "gt", "<C-]>", { desc = "Jump to Tag" })
 
 -- Clear Search Hightlight --

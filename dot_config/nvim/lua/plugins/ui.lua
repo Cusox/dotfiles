@@ -150,7 +150,7 @@ function M.setup()
 				{
 					function()
 						local icon = " "
-						local clients = vim.lsp.get_clients({ name = "copilot_ls", bufnr = 0 })
+						local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
 						if #clients == 0 then
 							return " "
 						end
@@ -170,7 +170,7 @@ function M.setup()
 						return icon
 					end,
 					color = function()
-						local clients = vim.lsp.get_clients({ name = "copilot_ls", bufnr = 0 })
+						local clients = vim.lsp.get_clients({ name = "copilot", bufnr = 0 })
 						if #clients == 0 then
 							return { fg = "#4C566A" }
 						end
@@ -219,7 +219,7 @@ function M.setup()
 			"<C-y>",
 			"<C-e>",
 		},
-		earing = "sine",
+		easing = "sine",
 		hide_cursor = false,
 	})
 

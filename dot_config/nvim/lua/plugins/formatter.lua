@@ -15,7 +15,7 @@ function M.setup()
 			vim.opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 			require("conform").setup({
-				log_level = vim.log.levels.DEBUG,
+				log_level = vim.log.levels.INFO,
 				formatters_by_ft = {
 					sh = { "shfmt" },
 					c = { "clang-format" },

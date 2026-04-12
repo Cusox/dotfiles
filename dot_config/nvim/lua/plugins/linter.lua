@@ -6,6 +6,7 @@ end
 
 function M.setup()
 	vim.api.nvim_create_autocmd("BufReadPre", {
+		once = true,
 		callback = function()
 			vim.pack.add({
 				gh("mfussenegger/nvim-lint"),

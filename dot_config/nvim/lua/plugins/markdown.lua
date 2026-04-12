@@ -7,6 +7,7 @@ end
 function M.setup()
 	vim.api.nvim_create_autocmd("FileType", {
 		pattern = "markdown",
+		once = true,
 		callback = function()
 			vim.pack.add({
 				gh("MeanderingProgrammer/render-markdown.nvim"),
