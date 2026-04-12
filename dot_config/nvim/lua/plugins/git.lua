@@ -1,36 +1,25 @@
-return {
-	{
-		"lewis6991/gitsigns.nvim",
-		event = "VeryLazy",
-		opts = {},
-	},
-	{
-		"esmuellert/codediff.nvim",
-		cmd = "CodeDiff",
-	},
-	{
-		"NeogitOrg/neogit",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"sindrets/diffview.nvim",
-		},
-		cmd = "Neogit",
-		keys = {
-			{ "<Leader>g", "<CMD>Neogit<CR>", desc = "Open Neogit" },
-		},
-		opts = {},
-	},
-	{
-		"NicholasZolton/neojj",
-		lazy = true,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"esmuellert/codediff.nvim",
-			"ibhagwan/fzf-lua", -- optional
-		},
-		cmd = "Neojj",
-		keys = {
-			{ "<leader>gg", "<cmd>Neojj<cr>", desc = "Open Neojj" },
-		},
-	},
-}
+local M = {}
+
+local gh = function(x)
+	return "https://github.com/" .. x
+end
+
+function M.setup()
+	vim.pack.add({
+		gh("lewis6991/gitsigns.nvim"),
+		gh("esmuellert/codediff.nvim"),
+		gh("sindrets/diffview.nvim"),
+		gh("neogitorg/neogit"),
+		gh("NicholasZolton/neojj"),
+	})
+	require("neogit").setup()
+	vim.keymap.set("n", "<leader>g", function()
+		require("neogit").open()
+	end, { desc = "Open Neogit" })
+	require("neojj").setup()
+	vim.keymap.set("n", "<leader>gg", function()
+		require("neojj").open()
+	end, { desc = "Open Neojj" })
+end
+
+return M

@@ -52,3 +52,27 @@ map("n", "<Leader>bq", "<CMD>bd<CR>", { desc = "Delete Buffer" })
 --- Terminal Mode ---
 -- ESC --
 map("t", "<Esc>", [[<C-\><C-n>]], { desc = "Terminal Escape", noremap = true })
+
+--- Incremental Selection ---
+vim.keymap.set({ "n", "x", "o" }, "<A-[>", function()
+	require("vim.treesitter._select").select_prev(vim.v.count1)
+end, { desc = "Select previous node" })
+
+vim.keymap.set({ "n", "x", "o" }, "<A-]>", function()
+	require("vim.treesitter._select").select_next(vim.v.count1)
+end, { desc = "Select next node" })
+vim.keymap.set({ "n", "x", "o" }, "<A-o>", function()
+	if vim.treesitter.get_parser(nil, nil, { error = false }) then
+		require("vim.treesitter._select").select_parent(vim.v.count1)
+	else
+		vim.lsp.buf.selection_range(vim.v.count1)
+	end
+end, { desc = "Select parent (outer) node" })
+
+vim.keymap.set({ "n", "x", "o" }, "<A-i>", function()
+	if vim.treesitter.get_parser(nil, nil, { error = false }) then
+		require("vim.treesitter._select").select_child(vim.v.count1)
+	else
+		vim.lsp.buf.selection_range(-vim.v.count1)
+	end
+end, { desc = "Select child (inner) node" })
