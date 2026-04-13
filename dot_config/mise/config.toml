@@ -25,6 +25,7 @@ ninja = { version = "latest", os = ["windows", "linux"] }
 node = { version = "latest", os = ["windows", "linux"] }
 pi = { version = "latest", os = ["windows", "linux"] }
 python = { version = "latest", os = ["windows", "linux"] }
+rclone = { version = "latest", os = ["windows", "linux"] }
 ripgrep = { version = "latest", os = ["windows", "linux"] }
 rust = { version = "latest", os = ["windows", "linux"] }
 starship = { version = "latest", os = ["windows", "linux"] }
