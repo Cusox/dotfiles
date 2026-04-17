@@ -5,8 +5,19 @@ local gh = function(x)
 end
 
 function M.setup()
+	-- Rust
 	vim.pack.add({
 		gh("mrcjkb/rustaceanvim"),
+	})
+	-- C/C++
+	vim.api.nvim_create_autocmd("FileType", {
+		pattern = { "c", "cpp" },
+		callback = function()
+			vim.pack.add({
+				gh("J-Cowsert/classlayout.nvim"),
+			})
+			require("classlayout").setup()
+		end,
 	})
 end
 

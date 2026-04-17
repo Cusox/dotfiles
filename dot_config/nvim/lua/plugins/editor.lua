@@ -77,7 +77,7 @@ function M.setup()
 	vim.keymap.set("n", "gck", "<cmd>Codedocs<CR>", { desc = "Insert annotation" })
 
 	vim.pack.add({
-		"https://github.com/Cartoone9/pretty-comment.nvim",
+		gh("Cartoone9/pretty-comment.nvim"),
 	})
 	require("pretty-comment").setup()
 	vim.keymap.set("v", "gcb", ":CommentBox<CR>", { silent = true, desc = "Comment box" })
