@@ -9,7 +9,7 @@
       "src": "https://github.com/fang2hou/blink-copilot"
     },
     "blink-ripgrep.nvim": {
-      "rev": "400042fa76e4fc67d29813bdf0d141c77abaa04f",
+      "rev": "4218a8d2b60009e0415e99a129685c292c9ddd65",
       "src": "https://github.com/mikavilpas/blink-ripgrep.nvim"
     },
     "blink.cmp": {
@@ -34,7 +34,7 @@
       "src": "https://github.com/esmuellert/codediff.nvim"
     },
     "codedocs.nvim": {
-      "rev": "c2cc49e27dad0618bee17959030554a0bc011fba",
+      "rev": "4d52da6d6993e8ac1ef9665e6daec5ce6e0a5635",
       "src": "https://github.com/jeangiraldoo/codedocs.nvim"
     },
     "colorful-menu.nvim": {
@@ -54,7 +54,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "69b0d5d045cc039e68ba4c82190ce471464226b6",
+      "rev": "83f7195972538beee3a40932b38ccd86c8cc0f06",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -134,7 +134,7 @@
       "src": "https://codeberg.org/Jorenar/nvim-dap-disasm"
     },
     "nvim-dap-view": {
-      "rev": "1dd4ba2307245ca9517a4b9d99f3bf80830e4397",
+      "rev": "57961b30d2d4054d2e1f549a2edad2e47731007f",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
@@ -175,7 +175,7 @@
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
     "rustaceanvim": {
-      "rev": "1a3eab0901faedbe784cf43971ecf76304190476",
+      "rev": "ccaab26b5ec21bacc3b632931274497601273308",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "tiny-cmdline.nvim": {
@@ -187,7 +187,7 @@
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
     },
     "tiny-glimmer.nvim": {
-      "rev": "932e6c2cc4a43ce578f007db1f8f61ad6798f938",
+      "rev": "1f1f26d84882b6f216cbeba548f2359c2118a876",
       "src": "https://github.com/rachartier/tiny-glimmer.nvim"
     },
     "tiny-inline-diagnostic.nvim": {
