@@ -1,4 +1,0 @@
-patch:
-  schema/icon: icons/chinese.ico
-  schema/ascii_icon: icons/english.ico
-  translator/dictionary: rime_ice.extended
