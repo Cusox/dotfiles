@@ -9,7 +9,7 @@
       "src": "https://github.com/fang2hou/blink-copilot"
     },
     "blink-ripgrep.nvim": {
-      "rev": "5ed7bac817777994cb80abccd052b73eb844166c",
+      "rev": "943fe3f25b55f82ed492166fa220e63bd960046c",
       "src": "https://github.com/mikavilpas/blink-ripgrep.nvim"
     },
     "blink.cmp": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "33321eba594f530e23a6b8970ba0b5fd695c8bba",
+      "rev": "2e29d5f233defe3c5587df0e4dd29af2bd95a5a7",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -74,7 +74,7 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "leap.nvim": {
-      "rev": "ebecd4c7957770e21abe71f8b2dd34952850033d",
+      "rev": "37605b63757d633a6cc70b7d65b932eafdbeedcf",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "lualine.nvim": {
@@ -94,7 +94,7 @@
       "src": "https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim"
     },
     "mason.nvim": {
-      "rev": "12ddd182d9efbdc848b540f16484a583d52da0fb",
+      "rev": "cb8445f8ce85d957416c106b780efd51c6298f89",
       "src": "https://github.com/mason-org/mason.nvim"
     },
     "mini.files": {
@@ -114,7 +114,7 @@
       "src": "https://github.com/neogitorg/neogit"
     },
     "neojj": {
-      "rev": "a1b1331509845a07776ef2579bd9010b91e42f12",
+      "rev": "5c864165de5d143419ecd141429cea44f58039cb",
       "src": "https://github.com/NicholasZolton/neojj"
     },
     "neoscroll.nvim": {
@@ -163,7 +163,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-web-devicons": {
-      "rev": "c72328a5494b4502947a022fe69c0c47e53b6aa6",
+      "rev": "8069e89df2d7259704286a5906a11c5b27d5b440",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "persistence.nvim": {
@@ -183,11 +183,11 @@
       "src": "https://github.com/Cartoone9/pretty-comment.nvim"
     },
     "render-markdown.nvim": {
-      "rev": "d67113f11384c0dad96fced2f7b91f1fc811e97f",
+      "rev": "3f3eea97b80839f629c951ca660ffd125bfa5b34",
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
-      "rev": "28735a0b0532e4c8cac420797f3d90e83e00a3bf",
+      "rev": "135f40f1243cf73963d34cf4694f8587cc07bee9",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "tiny-cmdline.nvim": {
