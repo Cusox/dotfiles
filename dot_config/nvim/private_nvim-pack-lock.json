@@ -74,11 +74,11 @@
       "src": "https://github.com/folke/lazydev.nvim"
     },
     "leap.nvim": {
-      "rev": "37605b63757d633a6cc70b7d65b932eafdbeedcf",
+      "rev": "156c71aabb68d520c6269db4103c8e5580e3ea67",
       "src": "https://codeberg.org/andyg/leap.nvim"
     },
     "lualine.nvim": {
-      "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
+      "rev": "131a558e13f9f28b15cd235557150ccb23f89286",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
     "mason-lspconfig.nvim": {
@@ -114,7 +114,7 @@
       "src": "https://github.com/neogitorg/neogit"
     },
     "neojj": {
-      "rev": "5c864165de5d143419ecd141429cea44f58039cb",
+      "rev": "53f764028ec348c813cd3082ed8781aa8b44a443",
       "src": "https://github.com/NicholasZolton/neojj"
     },
     "neoscroll.nvim": {
@@ -146,7 +146,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "21db1fd40cbcbf1524ae154ab8f394fdf085749a",
+      "rev": "bf5abe69c1874531f359a822d0cff4d73e26113f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
@@ -163,7 +163,7 @@
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
     },
     "nvim-web-devicons": {
-      "rev": "8069e89df2d7259704286a5906a11c5b27d5b440",
+      "rev": "4fc505ac7bd7692824a142e96e5f529c133862f8",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "persistence.nvim": {
@@ -199,7 +199,7 @@
       "src": "https://github.com/rachartier/tiny-code-action.nvim"
     },
     "tiny-glimmer.nvim": {
-      "rev": "1f1f26d84882b6f216cbeba548f2359c2118a876",
+      "rev": "cc285167914e947fc130523d02927fdaf24636a6",
       "src": "https://github.com/rachartier/tiny-glimmer.nvim"
     },
     "tiny-inline-diagnostic.nvim": {
