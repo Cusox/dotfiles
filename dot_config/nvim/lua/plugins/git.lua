@@ -7,8 +7,7 @@ end
 function M.setup()
 	vim.pack.add({
 		gh("lewis6991/gitsigns.nvim"),
-		gh("esmuellert/codediff.nvim"),
-		gh("sindrets/diffview.nvim"),
+		gh("dlyongemallo/diffview.nvim"),
 		gh("neogitorg/neogit"),
 		gh("NicholasZolton/neojj"),
 	})
