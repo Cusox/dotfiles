@@ -79,7 +79,14 @@
     true-color = always
 
 [merge]
+    tool = nvimdiff
+
+[mergetool]
+    keepBackup = false
 	conflictstyle = zdiff3
+
+[mergetool "nvimdiff"]
+    layout = "LOCAL,BASE,REMOTE / MERGED"
 
 {{ if eq .chezmoi.arch "arm64" -}}
 [url "https://ghfast.top/https://github.com"]
