@@ -138,6 +138,7 @@ const REVIEW_MAX_LINES = 2000
 const REVIEW_MAX_BYTES = 50 * 1024
 let cachedDerivedSkillAllowState: DerivedSkillAllowState | undefined
 let cachedReviewEditor: ReviewEditor | null | undefined
+let cachedDiffviewAvailable: boolean | undefined
 
 export default function (pi: ExtensionAPI) {
     const initSettings = loadSettings(process.cwd())
@@ -697,9 +698,10 @@ async function reviewWithTerminalEditor(ctx: ExtensionContext, state: FileReview
 
                 let child: ReturnType<typeof spawnSync> | undefined
                 try {
-                    child = spawnSync(editor.bin, buildReviewEditorArgs(currentPath, proposedPath), {
+                    const launch = buildReviewEditorLaunch(editor, currentPath, proposedPath)
+                    child = spawnSync(editor.bin, launch.args, {
                         stdio: "inherit",
-                        env: process.env,
+                        env: launch.env,
                     })
                 } finally {
                     tui.start()
@@ -759,20 +761,57 @@ function buildReviewTempPaths(tempDir: string, displayPath: string) {
     }
 }
 
-function buildReviewEditorArgs(currentPath: string, proposedPath: string): string[] {
-    return [
-        "-d",
-        currentPath,
-        proposedPath,
-        "-c",
-        "setlocal readonly nomodifiable",
-        "-c",
-        "wincmd l",
-        "-c",
-        "setlocal noreadonly modifiable",
-        "-c",
-        "echo 'Review the right buffer. Save and quit to apply, :cq to reject.'",
-    ]
+function buildReviewEditorLaunch(editor: ReviewEditor, currentPath: string, proposedPath: string) {
+    if (hasDiffviewCommand(editor)) {
+        return {
+            args: [
+                "-c",
+                "execute 'DiffviewDiffFiles ' .. fnameescape($PI_PERMISSION_REVIEW_CURRENT) .. ' ' .. fnameescape($PI_PERMISSION_REVIEW_PROPOSED)",
+                "-c",
+                "wincmd l",
+                "-c",
+                "setlocal noreadonly modifiable",
+                "-c",
+                "echo 'Review the writable pane. :wqa to apply, :cq to reject.'",
+            ],
+            env: {
+                ...process.env,
+                PI_PERMISSION_REVIEW_CURRENT: currentPath,
+                PI_PERMISSION_REVIEW_PROPOSED: proposedPath,
+            },
+        }
+    }
+
+    return {
+        args: [
+            "-d",
+            currentPath,
+            proposedPath,
+            "-c",
+            "setlocal readonly nomodifiable",
+            "-c",
+            "wincmd l",
+            "-c",
+            "setlocal noreadonly modifiable",
+            "-c",
+            "echo 'Review the writable pane. :wqa to apply, :cq to reject.'",
+        ],
+        env: process.env,
+    }
+}
+
+function hasDiffviewCommand(editor: ReviewEditor): boolean {
+    if (cachedDiffviewAvailable !== undefined) {
+        return cachedDiffviewAvailable
+    }
+
+    const result = spawnSync(
+        editor.bin,
+        ["--headless", "-c", "if exists(':DiffviewDiffFiles') | cquit 0 | else | cquit 1 | endif"],
+        { stdio: "ignore", env: process.env },
+    )
+    cachedDiffviewAvailable = !result.error && result.status === 0
+    return cachedDiffviewAvailable
 }
 
 function buildInlineReviewTitle(toolName: "edit" | "write", displayPath: string): string {
