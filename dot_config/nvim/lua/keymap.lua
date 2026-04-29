@@ -34,6 +34,8 @@ map("n", "<Leader>=", "<C-w>=", { desc = "Balance Window" })
 map("n", "<Leader>q", "<CMD>q<CR>", { desc = "Close Window" })
 map("n", "<Leader>w", "<CMD>w<CR>", { desc = "Save Window" })
 map("n", "<Leader>wq", "<CMD>wq<CR>", { desc = "Save and Close Window" })
+map("n", "<Leader>wqa", "<CMD>wqa<CR>", { desc = "Save and Close all Windows" })
+map("n", "<Leader>cq", "<CMD>cq<CR>", { desc = "Close Window without Modify" })
 
 -- Jump --
 map("n", "<Leader>[", "<C-o>", { desc = "Jump Prev" })
