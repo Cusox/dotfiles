@@ -9,7 +9,7 @@
       "src": "https://github.com/fang2hou/blink-copilot"
     },
     "blink-ripgrep.nvim": {
-      "rev": "943fe3f25b55f82ed492166fa220e63bd960046c",
+      "rev": "b55180d75d01c6bc71e705fdab183324b747778f",
       "src": "https://github.com/mikavilpas/blink-ripgrep.nvim"
     },
     "blink.cmp": {
@@ -58,7 +58,7 @@
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
     "fzf-lua": {
-      "rev": "2e29d5f233defe3c5587df0e4dd29af2bd95a5a7",
+      "rev": "b437bafc981a180d609bb4092c56ce8999f7a2c4",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -138,7 +138,7 @@
       "src": "https://codeberg.org/Jorenar/nvim-dap-disasm"
     },
     "nvim-dap-view": {
-      "rev": "01ad4537bac9a0843e72c9615fa7fcaa69b119eb",
+      "rev": "6e7c49a107f70af237543413690a60a63d8d7725",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
@@ -146,7 +146,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "bf5abe69c1874531f359a822d0cff4d73e26113f",
+      "rev": "6419b36f50c42420cbbf1d3ffba573094cf414c8",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
@@ -187,7 +187,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
-      "rev": "135f40f1243cf73963d34cf4694f8587cc07bee9",
+      "rev": "a5cb886005eaea18ada94cfc6f3a349c298274f7",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "tiny-cmdline.nvim": {
