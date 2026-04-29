@@ -139,6 +139,7 @@ const REVIEW_MAX_BYTES = 50 * 1024
 let cachedDerivedSkillAllowState: DerivedSkillAllowState | undefined
 let cachedReviewEditor: ReviewEditor | null | undefined
 let cachedDiffviewAvailable: boolean | undefined
+let cachedPiNvimRpcSession: boolean | undefined
 
 export default function (pi: ExtensionAPI) {
     const initSettings = loadSettings(process.cwd())
@@ -219,6 +220,10 @@ export default function (pi: ExtensionAPI) {
         const settings = mergeSkillAllowRules(loadSettings(ctx.cwd), derivedSkillAllowState.rules)
         const argValue = getMatchValue(event.toolName, event.input as Record<string, unknown>)
         const mode = resolveMode(settings, event.toolName, argValue ?? "", ctx.cwd)
+
+        if (shouldAutoAllowPiNvimMutation(event.toolName, mode)) {
+            return undefined
+        }
 
         switch (mode) {
             case "allow": {
@@ -1044,6 +1049,83 @@ function getMatchValue(tool: string, input: Record<string, unknown>): string | u
             return (input.path as string | undefined) ?? ""
         default:
             return undefined
+    }
+}
+
+function shouldAutoAllowPiNvimMutation(toolName: string, mode: Mode): boolean {
+    return mode === "ask" && (toolName === "edit" || toolName === "write") && isPiNvimRpcSession()
+}
+
+function isPiNvimRpcSession(): boolean {
+    if (cachedPiNvimRpcSession !== undefined) {
+        return cachedPiNvimRpcSession
+    }
+
+    cachedPiNvimRpcSession = isRpcNoSessionMode() && hasNvimAncestor()
+    return cachedPiNvimRpcSession
+}
+
+function isRpcNoSessionMode(): boolean {
+    const args = process.argv.slice(2)
+    return hasCliArgValue(args, "--mode", "rpc") && args.includes("--no-session")
+}
+
+function hasCliArgValue(args: string[], name: string, value: string): boolean {
+    for (let i = 0; i < args.length; i++) {
+        const arg = args[i]
+        if (arg === name && args[i + 1] === value) return true
+        if (arg === `${name}=${value}`) return true
+    }
+    return false
+}
+
+function hasNvimAncestor(): boolean {
+    let pid = process.ppid
+
+    for (let depth = 0; depth < 8 && pid > 1; depth++) {
+        const name = readProcName(pid)
+        if (name && isNvimProcessName(name)) return true
+
+        const parent = readProcParentPid(pid)
+        if (!parent || parent === pid) return false
+        pid = parent
+    }
+
+    return false
+}
+
+function readProcName(pid: number): string | undefined {
+    try {
+        const comm = fs.readFileSync(`/proc/${pid}/comm`, "utf-8").trim()
+        if (comm) return comm
+    } catch {
+        // Fall through to cmdline.
+    }
+
+    try {
+        const cmdline = fs.readFileSync(`/proc/${pid}/cmdline`, "utf-8").split("\0").find(Boolean)
+        return cmdline ? path.basename(cmdline) : undefined
+    } catch {
+        return undefined
+    }
+}
+
+function isNvimProcessName(name: string): boolean {
+    const base = path.basename(name).toLowerCase()
+    return base === "nvim" || base.startsWith("nvim-") || base.startsWith("nvim.")
+}
+
+function readProcParentPid(pid: number): number | undefined {
+    try {
+        const stat = fs.readFileSync(`/proc/${pid}/stat`, "utf-8")
+        const end = stat.lastIndexOf(")")
+        if (end === -1) return undefined
+
+        const fields = stat.slice(end + 2).trim().split(/\s+/)
+        const parent = Number(fields[1])
+        return Number.isFinite(parent) ? parent : undefined
+    } catch {
+        return undefined
     }
 }
 
