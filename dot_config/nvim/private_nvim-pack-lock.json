@@ -9,7 +9,7 @@
       "src": "https://github.com/fang2hou/blink-copilot"
     },
     "blink-ripgrep.nvim": {
-      "rev": "b55180d75d01c6bc71e705fdab183324b747778f",
+      "rev": "52f40e6b10ce51e0a9a412d28048cfd7561478d8",
       "src": "https://github.com/mikavilpas/blink-ripgrep.nvim"
     },
     "blink.cmp": {
@@ -33,10 +33,6 @@
       "rev": "7fdd64ff7ebaa0974b4c469c4bad25e2c8ef8754",
       "src": "https://github.com/RiccardoMarantonio/codeSeparator.nvim"
     },
-    "codediff.nvim": {
-      "rev": "8afc229d38dc13ce71b2ffbb860084b2c726e061",
-      "src": "https://github.com/esmuellert/codediff.nvim"
-    },
     "codedocs.nvim": {
       "rev": "5360ffb673440921500fc02685a0314657c90899",
       "src": "https://github.com/jeangiraldoo/codedocs.nvim"
@@ -50,8 +46,8 @@
       "src": "https://github.com/stevearc/conform.nvim"
     },
     "diffview.nvim": {
-      "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
-      "src": "https://github.com/sindrets/diffview.nvim"
+      "rev": "385f26fd6a50e3b0b11cc9623f1f96cde00ef08c",
+      "src": "https://github.com/dlyongemallo/diffview.nvim"
     },
     "friendly-snippets": {
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
@@ -110,11 +106,11 @@
       "src": "https://github.com/nvim-mini/mini.indentscope"
     },
     "neogit": {
-      "rev": "792c139da736230855e8341ebe6175bb6eb8268b",
+      "rev": "88000e7e60177558d1b428a0d561c92e5d81341e",
       "src": "https://github.com/neogitorg/neogit"
     },
     "neojj": {
-      "rev": "53f764028ec348c813cd3082ed8781aa8b44a443",
+      "rev": "1de8d61cf325334055d026fcd915c856bd7b5e04",
       "src": "https://github.com/NicholasZolton/neojj"
     },
     "neoscroll.nvim": {
@@ -138,7 +134,7 @@
       "src": "https://codeberg.org/Jorenar/nvim-dap-disasm"
     },
     "nvim-dap-view": {
-      "rev": "6e7c49a107f70af237543413690a60a63d8d7725",
+      "rev": "516c1187cbae16bc08593bbcb0c9b03d53048fdc",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lint": {
@@ -146,7 +142,7 @@
       "src": "https://github.com/mfussenegger/nvim-lint"
     },
     "nvim-lspconfig": {
-      "rev": "6419b36f50c42420cbbf1d3ffba573094cf414c8",
+      "rev": "f7e89f3d19fb436e1fbeff3bf4291eef35da94e3",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-surround": {
@@ -171,8 +167,8 @@
       "src": "https://github.com/folke/persistence.nvim"
     },
     "pi.nvim": {
-      "rev": "f2219f0ce79e512b81175d3940e306a49555bca3",
-      "src": "https://github.com/alex35mil/pi.nvim"
+      "rev": "6e86a704ed6ff488fda78b64f4e564d6ee620785",
+      "src": "https://github.com/pablopunk/pi.nvim"
     },
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
@@ -187,7 +183,7 @@
       "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
     },
     "rustaceanvim": {
-      "rev": "a5cb886005eaea18ada94cfc6f3a349c298274f7",
+      "rev": "38e7c5ee572b1fd35b0013eb2e2242152c08ffb8",
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "tiny-cmdline.nvim": {
