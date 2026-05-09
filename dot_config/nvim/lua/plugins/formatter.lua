@@ -29,6 +29,9 @@ function M.setup()
 					clang_format = {
 						prepend_args = { "--style=file", "--fallback-style=LLVM" },
 					},
+					yamlfmt = {
+						prepend_args = { "-formatter", "retain_line_breaks=true" },
+					},
 				},
 				default_format_opts = {
 					lsp_format = "fallback",
